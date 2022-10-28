@@ -10,12 +10,12 @@ export default function Meal() {
                 </div>
             </div>
             {show &&
-                <div className='w-3/4 mx-auto flex justify-between items-center'>
+                <div className='w-3/4  mx-auto flex justify-between items-center'>
                     <div>
                         <p>Kanapka z łososiem</p>
-                        <p className='text-sm text-gray-300'>Składniki: chleb, łosoś</p>
+                        <p className='text-sm  text-gray-300'>Składniki: chleb, łosoś</p>
                     </div>
-                    <button className="bg-green-500 text-white font-bold w-10 h-10 text- rounded-full">+</button>
+                    <button className="bg-green-500  text-white font-bold w-10 h-10 text- rounded-full">+</button>
                 </div>
             }
         </div>
