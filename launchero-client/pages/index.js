@@ -1,3 +1,4 @@
+
 import MenuBar from "../src/components/menubar/MenuBar";
 import Meal from '../src/components/meals-section/Meal';
 export default function Home() {
@@ -15,5 +16,6 @@ export default function Home() {
 
       </div>
     </div>
+
   )
 }
