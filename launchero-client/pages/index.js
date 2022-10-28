@@ -1,5 +1,9 @@
+import MenuBar from "../src/components/menubar/MenuBar";
+
 export default function Home() {
   return (
-    <div className="text-3xl underline">Hello</div>
+    <div className={'flex w-full h-screen'}>
+      <MenuBar />
+    </div>
   )
 }
