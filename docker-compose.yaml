@@ -1,15 +1,17 @@
-version: '3'
+version: '3.7'
 
 services:
-  sqlite:
-    container_name: sqlite
-    image: nouchka/sqlite3:latest
+  backend:
+    container_name: backend
+    build:
+      context: backend
+      dockerfile: ../backend/Dockerfile
     stdin_open: true
     volumes:
-      - lunchero-db:/root/db/
+      - lunchero-be:/backend
     ports:
-      - '9000:9000'
-    restart: unless-stopped
+      - "8000:8000"
+
 
 volumes:
-  lunchero-db:
+  lunchero-be:
