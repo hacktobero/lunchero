@@ -54,7 +54,7 @@ def create_user(user: user_schema.UserCreate, db: Session = Depends(get_db)):
     return user_schema.User.from_orm(db_created_user)
 
 
-@app.get("/users/{user_id}", response_model=user_schema.User)
+@app.get("/api/users/{user_id}", response_model=user_schema.User)
 async def read_user(user_id: int, db: Session = Depends(get_db)):
     db_user = user_service.get_user(db, user_id=user_id)
     if db_user is None:
