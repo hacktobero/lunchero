@@ -63,6 +63,7 @@ module.exports = {
       'navbar-blur': '16px'
     },
   },
-},
-plugins: [],
+
+  plugins: [],
+
 }
