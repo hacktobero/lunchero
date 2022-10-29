@@ -5,6 +5,11 @@ export const MealsContext = React.createContext();
 export default function ContextProvider ({children}) {
 
   const [data, setData] = useState([]);
+  const [show, setShow] = useState(false);
+
+  const showHandler = () => { 
+    setShow(!show)
+   }
 
   useEffect(() => {
     const getData = async () => {
@@ -18,6 +23,8 @@ export default function ContextProvider ({children}) {
   
   const initialValues = {
     data,
+    show,
+    showHandler
   }
 
 

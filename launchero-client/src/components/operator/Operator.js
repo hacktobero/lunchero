@@ -11,7 +11,6 @@ const Operator = () => {
 
     const [activeDay, setActiveDay] = useState('');
     const [mealName, SetMealName] = useState('')
-    const [show, setShow] = useState(false);
 
     const setDayHandler = (day) => {
       setActiveDay(day);
@@ -22,7 +21,6 @@ const Operator = () => {
     const meals = {
         name: mealName
     }
-    console.log(show);
 
     return(
         <div className={"flex flex-col"}>
@@ -38,9 +36,9 @@ const Operator = () => {
                      })}
                  </div>
                  <div className="">
-                     <Meal show={show}  meals={meals}></Meal>
+                     <Meal  meals={meals}></Meal>
                      <input></input>
-                     <Meal show={show}  meals={meals}></Meal>
+                     <Meal  meals={meals}></Meal>
                  </div>
             </div>
         </div>
