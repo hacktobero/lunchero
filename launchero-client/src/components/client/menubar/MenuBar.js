@@ -11,7 +11,7 @@ export default function MenuBar() {
   const [activeDay, setActiveDay] = useState('');
 
   const setDayHandler = (day) => {
-    setActiveDay(day);
+     setActiveDay(day);
   }
   const meals = {
     name: 'kanapka z lososiem',
