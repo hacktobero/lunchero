@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import { MdArrowDropDown, MdArrowDropUp } from 'react-icons/md';
 import { IconContext } from 'react-icons';
 import Dish from "./Dish";
 
@@ -18,7 +18,7 @@ export default function Meal(props) {
                             </IconContext.Provider>
                             :
                             <IconContext.Provider value={{ size: '2em' }}>
-                                <MdArrowDropDown />
+                                <MdArrowDropUp/>
                             </IconContext.Provider>}
                     </button>
                 </div>
