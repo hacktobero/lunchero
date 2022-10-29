@@ -1,32 +1,49 @@
 import Navbar from "../navbar"
 import { useState } from "react";
-
+import Tab from "../client/menubar/Tab";
+import Meal from "../client/meals-section/Meal";
+import { IoMdAdd } from 'react-icons/io';
 
 const Operator = () => { 
 
+    const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+
+
+    const [activeDay, setActiveDay] = useState('');
+    const [mealName, SetMealName] = useState('')
+
+    const setDayHandler = (day) => {
+      setActiveDay(day);
+    }
+
     const name = 'operator#1'
-    const [show, setShow] = useState(false);
+
+    const meals = {
+        name: mealName
+    }
+
+    const buttonIcon = <IoMdAdd />
+
     return(
-        <>
-        <Navbar name={name}></Navbar>
-        <div className="flex border-b  h-auto border-b-green-500 text-lg justify-between flex-col items-center p-4 font-bold ">
-            <div className='flex justify-between items-center w-full duration-200  hover:text-green-500'>
-                <h1>Breakfast</h1>
-                <div>
-                    <button onClick={() => setShow(!show)} className='border rounded-full w-24 h-12 border-green-500 bg-green-500 text-white px-2 py-1  font-bold '>{show ? 'Hide' : 'Show'}</button>
-                </div>
+        <div className="flex flex-col ">
+            <div className="flex">
+                <Navbar name={name}></Navbar>
             </div>
-            {show &&
-                <div className='w-3/4  mx-auto flex justify-between items-center'>
-                    <div>
-                        <p>Kanapka z łososiem</p>
-                        <p className='text-sm  text-gray-300'>Składniki: chleb, łosoś</p>
-                    </div>
-                    <button className="bg-green-500  text-white font-bold w-10 h-10 text- rounded-full">+</button>
-                </div>
-            }
+            <div className="w-8/10 self-center justify-around p-10 shadow-lg mt-20 rounded-xl">
+                <div className={'flex  h-20'}>
+                    {days.map((day, index) => {
+                    return (
+                    <Tab key={index} day={day}  active={activeDay} onDayChange={setDayHandler} />
+                        )
+                     })}
+                 </div>
+                 <div className="">
+                     <Meal buttonIcon={buttonIcon} meals={meals}></Meal>
+                     <input></input>
+                     <Meal buttonIcon={buttonIcon}></Meal>
+                 </div>
+            </div>
         </div>
-        </>
     )
  }
 

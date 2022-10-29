@@ -1,6 +1,7 @@
 
 const Navbar = (props) => {
 
+    
     const profilePhoto = [{
         photo: 'https://freepikpsd.com/file/2019/10/default-profile-picture-png-1-Transparent-Images.png'
       }]
