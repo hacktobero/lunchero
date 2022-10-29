@@ -1,4 +1,4 @@
-import Meal from "../meals-section/Meal";
+import Meal from "../../meals-section/Meal";
 
 export default function MenuBar () {
   return (
