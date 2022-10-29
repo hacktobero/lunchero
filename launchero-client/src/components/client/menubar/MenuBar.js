@@ -20,7 +20,7 @@ export default function MenuBar() {
     ingredients: 'ingredients: chleb, łosoś'
   }
   
-  const buttonIcon = <MdArrowDropDown />
+
    
 
 console.log(meals);
@@ -35,7 +35,7 @@ console.log(meals);
         })}
       </div>
       <div className={'flex flex-col w-full h-full self-center overflow-y-scroll rounded-md'}>
-        <Meal buttonIcon={buttonIcon} meals={meals}/>
+        <Meal meals={meals}/>
       </div>
     </div>
   )

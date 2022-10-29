@@ -1,7 +1,7 @@
 import Navbar from "../navbar"
 import { useState } from "react";
 import Tab from "../client/menubar/Tab";
-import Meal from "../client/meals-section/Meal";
+import Meal from "./Meal";
 import { IoMdAdd } from 'react-icons/io';
 
 const Operator = () => { 
@@ -11,6 +11,7 @@ const Operator = () => {
 
     const [activeDay, setActiveDay] = useState('');
     const [mealName, SetMealName] = useState('')
+    const [show, setShow] = useState(false);
 
     const setDayHandler = (day) => {
       setActiveDay(day);
@@ -21,11 +22,10 @@ const Operator = () => {
     const meals = {
         name: mealName
     }
-
-    const buttonIcon = <IoMdAdd />
+    console.log(show);
 
     return(
-        <div className="flex flex-col ">
+        <div className={"flex flex-col"}>
             <div className="flex">
                 <Navbar name={name}></Navbar>
             </div>
@@ -38,9 +38,9 @@ const Operator = () => {
                      })}
                  </div>
                  <div className="">
-                     <Meal buttonIcon={buttonIcon} meals={meals}></Meal>
+                     <Meal show={show}  meals={meals}></Meal>
                      <input></input>
-                     <Meal buttonIcon={buttonIcon}></Meal>
+                     <Meal show={show}  meals={meals}></Meal>
                  </div>
             </div>
         </div>

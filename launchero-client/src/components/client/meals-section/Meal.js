@@ -27,11 +27,11 @@ export default function Meal(props) {
                     <button onClick={() => setShow(!show)} className='border rounded-full w-12 h-12 duration-150 border-green-500 bg-green-500 text-white flex justify-center items-center font-bold hover:bg-green-600 '>
                         {!show ?
                             <IconContext.Provider value={{ size: '2em' }}>
-                                {props.buttonIcon}
+                                <MdArrowDropDown />
                             </IconContext.Provider>
                             :
                             <IconContext.Provider value={{ size: '2em' }}>
-                                {props.buttonIcon}
+                                <MdArrowDropDown />
                             </IconContext.Provider>}
                     </button>
                 </div>
