@@ -13,7 +13,7 @@ const Navbar = (props) => {
                 <p className='w-full sm:ml-1 lg:ml-0 lg:text-xl sm:text-lg text-center'>{props.name}</p>
             </div>
            <div className='text-5xl w-2/3 flex justify-end items-center'>
-             <p className='border-solid border-b-2 border-green-500'>Lunchero</p>
+             <p className=' text-green-400 font-bold'>Lunchero</p>
             </div>
         </div>
     )
