@@ -1,16 +1,4 @@
 import Meal from "../meals-section/Meal";
-import Tab from "./Tab";
-import { useState } from 'react';
-export default function MenuBar() {
-
-  const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
-
-
-  const [activeDay, setActiveDay] = useState('');
-
-  const setDayHandler = (day) => {
-    setActiveDay(day);
-  }
 
   return (
 

@@ -1,6 +1,6 @@
 import Navbar from "../src/components/navbar";
-import MenuBar from "../src/components/menubar/MenuBar";
-import Meal from '../src/components/meals-section/Meal';
+import MenuBar from "../src/components/client/menubar/MenuBar";
+import Meal from '../src/components/client/meals-section/Meal';
 export default function Home() {
   return (
     <div className={'flex w-full h-screen items-center justify-center flex-col'}>
