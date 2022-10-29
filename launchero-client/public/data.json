@@ -1,0 +1,32 @@
+{
+    "organisation": {
+        "name": "Flyr",
+        "id": 21
+    },
+    "user": {
+        "id": 21,
+        "username": "pawelsdjjd2",
+        "role": "user",
+        "organisation_id": 32
+    },
+    "menu": {
+        "id": 65,
+        "org_id": 21,
+        "day": "25.06.2022"
+    },
+    "meal": {
+        "id": 54,
+        "menu_id": 65,
+        "description": "A steak with fries"
+    },
+    "order": {
+        "id": 57,
+        "meal_id": 54,
+        "user_id": 21
+    },
+    "tag": {
+        "id": 94,
+        "meal_id": 53,
+        "name": "vegan"
+    }
+}

@@ -1,26 +1,24 @@
-import React, {useEffect} from "react"
-
+import React, {useEffect, useState, useCallback} from "react"
 export const MealsContext = React.createContext();
-
-
-
 
 
 export default function ContextProvider ({children}) {
 
-  useEffect(() => {
-    const MealsJson = async () => {
+  const [data, setData] = useState([]);
+
+  useEffect(useCallback(() => {
+    const getData = async () => {
       const res = await fetch("/data.json");
-      const newData = await res.json();
-      console.log(newData)
+      const data = await res.json();
+      setData(data)
     };
+    getData();
+  }), [] 
+  , []);
 
-    MealsJson();
-  },[]);
-
-
+  
   const initialValues = {
-
+    data,
   }
 
 
