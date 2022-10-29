@@ -17,7 +17,7 @@
     "meal": {
         "id": 54,
         "menu_id": 65,
-        "description": "A steak with fries",
+        "description": "A steak with fries"
     },
     "order": {
         "id": 57,
