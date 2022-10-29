@@ -1,9 +1,7 @@
 import Meal from "../meals-section/Meal";
 import Tab from "./Tab";
 import { useState } from 'react';
-import { MdArrowDropDown, MdArrowDropUp } from 'react-icons/md';
-import { IoMdAdd } from 'react-icons/io';
-import { IconContext } from 'react-icons';
+import { MdArrowDropDown } from 'react-icons/md';
 export default function MenuBar() {
 
 
@@ -13,15 +11,12 @@ export default function MenuBar() {
   const [activeDay, setActiveDay] = useState('');
 
   const setDayHandler = (day) => {
-    setActiveDay(day);
+     setActiveDay(day);
   }
   const meals = {
     name: 'kanapka z lososiem',
     ingredients: 'ingredients: chleb, łosoś'
   }
-  
-
-   
 
 console.log(meals);
   return (
