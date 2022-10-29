@@ -58,6 +58,7 @@ module.exports = {
       'white-smoke':'#f7f7f7',
       'white':'#FFFFFF',
       'whiteBlue':'#CDDEFF',
+      'backdrop':'rgba(0, 0, 0, .5)',
     },
     backdropBlur: {
       'navbar-blur': '16px'
