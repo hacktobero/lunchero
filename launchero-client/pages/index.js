@@ -9,11 +9,6 @@ export default function Home() {
       <div className={'flex h-full w-full justify-center self-center'}>
         <MenuBar/>
       </div>
-
-
-
-
-
     </div>
 
   )
