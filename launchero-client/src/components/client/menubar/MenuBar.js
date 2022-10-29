@@ -1,9 +1,7 @@
 import Meal from "../meals-section/Meal";
 import Tab from "./Tab";
 import { useState } from 'react';
-import { MdArrowDropDown, MdArrowDropUp } from 'react-icons/md';
-import { IoMdAdd } from 'react-icons/io';
-import { IconContext } from 'react-icons';
+import { MdArrowDropDown } from 'react-icons/md';
 export default function MenuBar() {
 
 
@@ -19,9 +17,9 @@ export default function MenuBar() {
     name: 'kanapka z lososiem',
     ingredients: 'ingredients: chleb, łosoś'
   }
-  
+
   const buttonIcon = <MdArrowDropDown />
-   
+
 
 console.log(meals);
   return (
