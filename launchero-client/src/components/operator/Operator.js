@@ -1,7 +1,14 @@
-import { useState } from 'react';
-export default function Meal() {
+import Navbar from "../navbar"
+import { useState } from "react";
+
+
+const Operator = () => { 
+
+    const name = 'operator#1'
     const [show, setShow] = useState(false);
-    return (
+    return(
+        <>
+        <Navbar name={name}></Navbar>
         <div className="flex border-b  h-auto border-b-green-500 text-lg justify-between flex-col items-center p-4 font-bold ">
             <div className='flex justify-between items-center w-full duration-200  hover:text-green-500'>
                 <h1>Breakfast</h1>
@@ -19,5 +26,8 @@ export default function Meal() {
                 </div>
             }
         </div>
+        </>
     )
-}
+ }
+
+ export default Operator
