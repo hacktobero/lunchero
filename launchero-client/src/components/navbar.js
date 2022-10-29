@@ -12,7 +12,7 @@ const Navbar = () => {
                 <p className='w-full sm:ml-1 lg:ml-0 lg:text-xl sm:text-lg text-center'>username</p>
             </div>
            <div className='text-5xl w-2/3 flex justify-end items-center'>
-             Lunchero
+             <p className='border-solid border-b-2 border-green'>Lunchero</p>
             </div>
         </div>
     )
