@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: launchero-client
+        working-directory: frontend
     steps:
     - uses: actions/checkout@v3
     - name: Use Node.js 18
@@ -24,4 +24,4 @@ jobs:
       uses: cypress-io/github-action@v4
       with:
         start: npm run start
-        project: ./launchero-client
+        project: ./frontend
