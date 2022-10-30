@@ -1,7 +1,7 @@
 name: frontend
 on: push
 jobs:
-  build:
+  build-and-lint-frontend:
     runs-on: ubuntu-latest
     defaults:
       run:
