@@ -4,3 +4,6 @@ passlib
 uvicorn
 sqlalchemy
 pytest
+pytest-xdist
+pytest-asyncio
+pytest-cov
