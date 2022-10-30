@@ -4,9 +4,6 @@ export const MealsContext = React.createContext({});
 
 
 
-
-export const MealsContext = React.createContext();
-
 export default function ContextProvider ({children}) {
 
   const [data, setData] = useState([]);
