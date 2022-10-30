@@ -1,11 +1,17 @@
-import {IconContext} from "react-icons";
-import {IoMdAdd} from "react-icons/io";
-import {IoRemove} from "react-icons/io5";
-import {useState} from "react";
+import { IconContext } from "react-icons";
+import { IoMdAdd } from "react-icons/io";
+import { IoRemove } from "react-icons/io5";
+import { useState, useContext } from "react";
+import { MealsContext } from "../../../Context/Context";
 
-export default function Dish ({name, ingredients}) {
+export default function Dish({name, ingredients}) {
   const [count, setCount] = useState(0);
 
+  const context = useContext(MealsContext);
+
+  const { meal } = context?.data;
+
+  console.log(meal);
 
   const decrementHandler = () => {
     if (count > 0) {
@@ -15,11 +21,11 @@ export default function Dish ({name, ingredients}) {
     }
   };
 
-  return(
+  return (
     <div className='w-full p-3 cursor-pointer duration-200 border-green-300 rounded-md flex justify-between items-center shadow-lg'>
       <div>
-        <p className='text-xl'>{name}</p>
-        <p className='text-sm  text-gray-300'> {ingredients}</p>
+        <p className='text-xl'>{meal.description}</p>
+        <p className='text-sm  text-gray-300'> {`Ingredients: ${meal.ingredients}`}</p>
       </div>
       <div className='flex flex-col w-1/3 items-end'>
         <div className='flex lg:w-2/3 sm:w-full items-center justify-end gap-2'>
