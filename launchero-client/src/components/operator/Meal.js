@@ -6,6 +6,7 @@ import { IconContext } from 'react-icons';
 import AddMeal from './AddMeal';
 import { useContext } from 'react';
 import { MealsContext } from '../../Context/Context';
+import Dish from './Dish';
 
 export default function Meal(props) {
 
@@ -28,6 +29,9 @@ export default function Meal(props) {
                     </button>
                 </div>
             </div>
+            <div className={'w-full'}>
+                <Dish name={props.meals.name} ingredients={props.meals.ingredients}/>
+              </div>
         </div>
     )
 }
