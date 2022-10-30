@@ -1,11 +1,15 @@
 import React, {useEffect, useState } from "react"
-export const MealsContext = React.createContext();
+export const MealsContext = React.createContext({});
+
 
 
 export default function ContextProvider ({children}) {
 
   const [data, setData] = useState([]);
   const [show, setShow] = useState(false);
+  
+
+  
 
   const showHandler = () => { 
     setShow(!show)
@@ -19,6 +23,7 @@ export default function ContextProvider ({children}) {
     };
     getData();
   }, []);
+
 
   
   const initialValues = {
