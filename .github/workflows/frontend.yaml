@@ -1,7 +1,44 @@
 name: frontend
 on: push
 jobs:
-  build-and-lint-frontend:
+  unit-tests-frontend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js 18
+      uses: actions/setup-node@v3
+      with:
+        node-version: "18.x"
+    - name: Install modules
+      run: npm install
+    - name: Run unit tests
+      run: npm run test
+
+  e2e-tests-frontend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js 18
+      uses: actions/setup-node@v3
+      with:
+        node-version: "18.x"
+    - name: Install modules
+      run: npm install
+    - name: Build production app
+      run: npm run build
+    - name: Cypress run
+      uses: cypress-io/github-action@v4
+      with:
+        start: npm run start
+        working-directory: frontend
+
+  lint-frontend:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -16,12 +53,3 @@ jobs:
       run: npm install
     - name: Run ESLint
       run: npm run lint
-    - name: Run unit tests
-      run: npm run test
-    - name: Build production app
-      run: npm run build
-    - name: Cypress run
-      uses: cypress-io/github-action@v4
-      with:
-        start: npm run start
-        working-directory: frontend

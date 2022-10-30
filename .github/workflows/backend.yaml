@@ -2,7 +2,7 @@ name: backend
 on: [push]
 
 jobs:
-  build-backend:
+  unit-tests-backend:
     runs-on: ubuntu-latest
     defaults:
       run:
