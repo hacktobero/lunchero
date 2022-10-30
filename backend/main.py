@@ -13,10 +13,8 @@ Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
-origins = [
-    "http://127.0.0.1:8000",
-    "http://localhost:8000"
-]
+
+origins = ["http://127.0.0.1:8000", "http://localhost:8000"]
 
 app.add_middleware(
     CORSMiddleware,
@@ -60,5 +58,3 @@ async def read_user(user_id: int, db: Session = Depends(get_db)):
     if db_user is None:
         raise HTTPException(status_code=400, detail="User does not exist")
     return user_schema.User.from_orm(db_user)
-
-
