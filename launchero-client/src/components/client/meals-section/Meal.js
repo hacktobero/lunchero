@@ -4,8 +4,11 @@ import { IconContext } from 'react-icons';
 import Dish from "./Dish";
 import { MealsContext } from '../../../Context/Context';
 
+
 export default function Meal(props) {
-    const [show, setShow] = useState(false);
+
+
+  const [show, setShow] = useState(false);
 
     const context = useContext(MealsContext);
 
@@ -18,7 +21,7 @@ export default function Meal(props) {
             <div className={`flex justify-between items-center w-full duration-200  hover:text-green-500 ${show ? 'text-green-500' : ''}`}>
                 <h1>Breakfast</h1>
                 <div>
-                    <button onClick={() => setShow(!show)} className='border rounded-full w-10 h-10 duration-150 border-green-500 bg-green-500 text-white flex justify-center items-center font-bold hover:bg-green-600 '>
+                    <button onClick={() => setShow(!show)} className='border rounded-full w-10 h-10 mr-3 duration-150 border-green-500 bg-green-500 text-white flex justify-center items-center font-bold hover:bg-green-600 '>
                         {!show ?
                             <IconContext.Provider value={{ size: '2em' }}>
                                 <MdArrowDropDown />
@@ -31,10 +34,10 @@ export default function Meal(props) {
                 </div>
             </div>
             {show &&
-                <div className={'w-full'}>
-                    <Dish name={props.meals.name} ingredients={props.meals.ingredients} />
-                    <Dish name={props.meals.name} ingredients={props.meals.ingredients} />
-                </div>
+              <div className={'w-full'}>
+                <Dish name={props.meals.name} ingredients={props.meals.ingredients} id={props.meals.name}/>
+                <Dish name={props.meals.name} ingredients={props.meals.ingredients} id={props.meals.name}/>
+              </div>
             }
         </div>
     )
