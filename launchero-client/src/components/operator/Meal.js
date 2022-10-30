@@ -15,8 +15,8 @@ export default function Meal(props) {
         <div className="flex border-b  h-auto border-b-green-500 text-lg justify-between flex-col items-center p-4 font-bold ">
             {context.show && <AddMeal></AddMeal>
             }
-            <div className={`flex justify-between items-center w-full duration-200  hover:text-green-500 ${context.show ? 'text-green-500' : ''}`}>
-                <h1>Breakfast</h1>
+            <div className={`flex justify-center items-center w-full duration-200  hover:text-green-500 ${context.show ? 'text-green-500' : ''}`}>
+                <h1></h1>
                 <div>
                     <button onClick={() =>{ 
                         context.showHandler()

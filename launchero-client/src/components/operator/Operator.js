@@ -18,10 +18,6 @@ const Operator = () => {
 
     const name = 'operator#1'
 
-    const meals = {
-        name: mealName
-    }
-
     return(
         <div className={"flex flex-col"}>
             <div className="flex">
@@ -36,9 +32,7 @@ const Operator = () => {
                      })}
                  </div>
                  <div className="">
-                     <Meal  meals={meals}></Meal>
-                     <input></input>
-                     <Meal  meals={meals}></Meal>
+                     <Meal ></Meal>
                  </div>
             </div>
         </div>
