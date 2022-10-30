@@ -1,5 +1,9 @@
 import React, {useEffect, useState } from "react"
 
+export const MealsContext = React.createContext({});
+
+
+
 
 export const MealsContext = React.createContext();
 
@@ -21,6 +25,7 @@ export default function ContextProvider ({children}) {
     };
     getData();
   }, []);
+
 
   function getItemQuantity(id) {
     return cartItems.find(item => item.id === id)?.quantity || 0

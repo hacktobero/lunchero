@@ -16,12 +16,16 @@ const Operator = () => {
       setActiveDay(day);
     }
 
-    const name = 'operator#1'
-
+    const meals = {
+        name: 'essa',
+        ingredients: 'esaas',
+        type:'',
+        preferences:''
+      }
     return(
         <div className={"flex flex-col"}>
             <div className="flex">
-                <Navbar name={name}></Navbar>
+                <Navbar></Navbar>
             </div>
             <div className="w-8/10 self-center justify-around p-10 shadow-lg mt-20 rounded-xl">
                 <div className={'flex  h-20'}>
@@ -32,7 +36,7 @@ const Operator = () => {
                      })}
                  </div>
                  <div className="">
-                     <Meal ></Meal>
+                     <Meal meals={meals}></Meal>
                  </div>
             </div>
         </div>

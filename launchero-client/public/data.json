@@ -17,7 +17,9 @@
     "meal": {
         "id": 54,
         "menu_id": 65,
-        "description": "A steak with fries"
+        "description": "A steak with fries",
+        "type": "Breakfast",
+        "ingredients": "Steak, Fries"
     },
     "order": {
         "id": 57,
@@ -26,7 +28,7 @@
     },
     "tag": {
         "id": 94,
-        "meal_id": 53,
+        "meal_id": 54,
         "name": "vegan"
     }
 }
