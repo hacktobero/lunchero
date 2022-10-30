@@ -2,7 +2,7 @@ name: backend
 on: [push]
 
 jobs:
-  unit-tests-backend:
+  unit-tests:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -22,7 +22,7 @@ jobs:
         run: alembic upgrade head
       - name: Tests with pytest
         run: pytest -n 4
-  lint-backend:
+  lint:
     runs-on: ubuntu-latest
     defaults:
       run:
