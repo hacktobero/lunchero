@@ -5,9 +5,10 @@ from utils.database_utils import Base
 
 class Meal(Base):
     __tablename__ = "meals"
+
     id = Column(Integer, primary_key=True, index=True)
     menu_id = Column(Integer, ForeignKey("menus.id"), nullable=False)
-    description = Column(String(500))
+    description = Column(String(500), nullable=False)
 
     menu = relationship("Menu", back_populates="meals")
     orders = relationship("Order", back_populates="meal")

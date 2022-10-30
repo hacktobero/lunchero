@@ -1,13 +1,11 @@
-from fastapi import Depends, FastAPI, HTTPException
-from sqlalchemy.orm import Session
-from utils.database_utils import get_db
 import re
-from fastapi.middleware.cors import CORSMiddleware
 
 import schemas.user_schema as user_schema
-from utils.database_utils import Base
 import services.user_service as user_service
-from utils.database_utils import engine
+from fastapi import Depends, FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
+from sqlalchemy.orm import Session
+from utils.database_utils import Base, engine, get_db
 
 Base.metadata.create_all(bind=engine)
 
@@ -39,14 +37,6 @@ def create_user(user: user_schema.UserCreate, db: Session = Depends(get_db)):
     if not re.match(email_regex, user.email):
         raise HTTPException(
             status_code=400, detail="Email must be a valid email address"
-        )
-    if len(user.first_name) < 3:
-        raise HTTPException(
-            status_code=400, detail="First name must be at least 2 characters"
-        )
-    if len(user.last_name) < 3:
-        raise HTTPException(
-            status_code=400, detail="Last name must be at least 2 characters"
         )
     db_created_user = user_service.create_user(db=db, user=user)
     return user_schema.User.from_orm(db_created_user)
