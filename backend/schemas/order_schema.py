@@ -3,16 +3,16 @@ import json
 from pydantic import BaseModel
 
 
-class UserBase(BaseModel):
-    email: str
-    organisation_id: str
+class OrderBase(BaseModel):
+    meal_id: int
+    user_id: int
 
 
-class UserCreate(UserBase):
-    password: str
+class OrderCreate(OrderBase):
+    pass
 
 
-class User(UserBase):
+class Order(OrderBase):
     id: int
 
     class Config:
