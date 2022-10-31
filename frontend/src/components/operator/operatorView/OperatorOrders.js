@@ -1,9 +1,11 @@
-import Meal from "../Meal";
-
 const OperatorOrders = () => { 
     return(
-        <div className="justify-center w-5/10 m-auto">
-            <Meal />
+        <div className="flex justify-center">
+            <div>orders</div>
+            <div>orders</div>
+            <div>orders</div>
+            <div>orders</div>
+            <div>orders</div>
         </div>
     )
  }

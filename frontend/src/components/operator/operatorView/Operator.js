@@ -40,7 +40,6 @@ const Operator = () => {
             </div>
 
             {ordersPush&&<AddMenu></AddMenu>}
-            
             {!ordersPush&&<OperatorOrders></OperatorOrders>}
         </div>
     )

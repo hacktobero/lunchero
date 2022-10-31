@@ -15,6 +15,7 @@
         "day": "25.06.2022"
     },
     "meal": {
+        "id": 54,
         "menu_id": 65,
         "description": "A steak with fries"
     },

@@ -16,7 +16,7 @@ const AddMeal = () => {
                                 <FaRegTimesCircle/>
                                 </button>
 
-                                <div className="grid h-auto w-9/10 xl:mt-0 xxl:mt-5 sm:mt-0 text-black self-center py-6 px-5 relative">
+                                <div className="grid h-auto w-9/10 xl:mt-0 xxl:mt-10 sm:mt-0 text-black self-center py-6 px-5 relative">
                                     <form className='grid lg:grid-cols-2 grid-cols-1 lg:gap-8'>
                                             <div className='grid lg:col-span-1  col-span-2 w-2/3'>
                                             <label className={'font-bold'}>Meal name</label>
