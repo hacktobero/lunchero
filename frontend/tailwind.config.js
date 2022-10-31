@@ -58,10 +58,14 @@ module.exports = {
       'white-smoke':'#f7f7f7',
       'white':'#FFFFFF',
       'whiteBlue':'#CDDEFF',
+      'backdrop':'rgba(0, 0, 0, .5)',
     },
     backdropBlur: {
       'navbar-blur': '16px'
     },
+    boxShadow:{
+      'green':'0px 0px 10px -3px rgba(51, 150, 76, 1)'
+    }
   },
 
   plugins: [],

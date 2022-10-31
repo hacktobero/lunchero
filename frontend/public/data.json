@@ -1,0 +1,64 @@
+{
+    "organisation": {
+        "name": "Flyr",
+        "id": 21
+    },
+    "user": {
+        "id": 21,
+        "username": "pawelsdjjd2",
+        "role": "user",
+        "organisation_id": 32
+    },
+    "menu": {
+        "id": 65,
+        "org_id": 21,
+        "day": "25.06.2022",
+        "meals": [
+            {
+                "name": "A steak with fries",
+                "id": 54,
+                "type": "Breakfast",
+                "ingredients": "Steak, Fries",
+                "tag": "Meat"        
+            },
+            {
+                "name": "Salad with tofu",
+                "id": 52,
+                "type": "Breakfast",
+                "ingredients": "Salad, Tofu, Tomato, Vinegar sauce",
+                "tag": "Vegan"        
+            },
+            {
+                "name": "Pasta with chicken",
+                "id": 50,
+                "type": "Lunch",
+                "ingredients": "Salad, Tofu, Tomato, Vinegar sauce",
+                "tag": "Meat"     
+            },
+            {
+                "name": "Vegeburger",
+                "id": 49,
+                "type": "Lunch",
+                "ingredients": "Bread, Soya beef, Salad, Tomato, Honey sauce",
+                "tag": "Vegan"        
+            },
+            {
+                "name": "Cheese cake",
+                "id": 38,
+                "type": "Extra",
+                "ingredients": "Some ingredients",
+                "tag": "Vegan"
+            }
+        ]
+    },
+    "order": {
+        "id": 57,
+        "meal_id": 54,
+        "user_id": 21
+    },
+    "tag": {
+        "id": 94,
+        "meal_id": 54,
+        "name": "vegan"
+    }
+}
