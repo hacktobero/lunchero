@@ -21,7 +21,7 @@ jobs:
       - name: Run migrations
         run: alembic upgrade head
       - name: Tests with pytest
-        run: pytest -n 4
+        run: PYTHONPATH=. pytest -n 4
   lint:
     runs-on: ubuntu-latest
     defaults:

@@ -9,3 +9,5 @@ pytest-asyncio
 pytest-cov
 requests
 bcrypt
+pyjwt
+python-multipart

@@ -1,9 +1,3 @@
-import sys
-
-from schemas import user_schema
-
-sys.path.append("../no-pressure-query-backend")
-
 import uuid
 from typing import Optional
 

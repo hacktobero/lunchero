@@ -1,9 +1,9 @@
 import uuid
 
 import pytest
+import utils.testing_utils as testing_utils
 from fastapi import HTTPException
 from schemas.user_schema import UserCreate
-from utils import testing_utils
 from utils.database_utils import SessionLocal
 
 from services.user_service import (
