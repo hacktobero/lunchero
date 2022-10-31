@@ -19,11 +19,7 @@ export default function MenuBar() {
   const setDayHandler = (day) => {
      setActiveDay(day);
   }
-  const meals = {
-    name: 'kanapka z lososiem',
-    ingredients: 'ingredients: chleb, łosoś'
-  }
-
+  
 
   return (
 
