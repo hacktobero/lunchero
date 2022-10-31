@@ -22,7 +22,7 @@ def upgrade():
         sa.Column(
             "organisation_id",
             sa.Integer,
-            sa.ForeignKey("orgranisations.id"),
+            sa.ForeignKey("organisations.id"),
             nullable=False,
         ),
         sa.Column("day", sa.DateTime, nullable=False),

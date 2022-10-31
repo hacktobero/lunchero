@@ -22,11 +22,11 @@ def upgrade():
         sa.Column(
             "organisation_id",
             sa.Integer,
-            sa.ForeignKey("orgranisations.id"),
+            sa.ForeignKey("organisations.id"),
             nullable=False,
         ),
         sa.Column("email", sa.String(50), nullable=False, index=True),
-        sa.Column("hashed_password", sa.String(128), nullable=False),
+        sa.Column("hashed_password", sa.String, nullable=False),
     )
 
 

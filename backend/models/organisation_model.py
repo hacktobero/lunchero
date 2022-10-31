@@ -1,14 +1,15 @@
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
-from utils.database_utils import Base
+
+from models.base import Base
 
 
 class Organisation(Base):
     __tablename__ = "organisations"
 
-    id = Column(Integer, primary_key=True, index=True)
-    name = Column(String(50), nullable=False)
-    role = Column(String(50), nullable=False)
+    id: int = Column(Integer, primary_key=True, index=True)  # type: ignore
+    name: str = Column(String(50), nullable=False)  # type: ignore
+    role: str = Column(String(50), nullable=False)  # type: ignore
 
     users = relationship("User", back_populates="organisation")
     menus = relationship("Menu", back_populates="organisation")

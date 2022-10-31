@@ -20,12 +20,7 @@ def create_user(
     client = TestClient(app)
     r = client.post(
         "/api/users/",
-        json={
-            "email": email,
-            "password": password,
-            "first_name": "test_first_name",
-            "last_name": "test_last_name",
-        },
+        json={"email": email, "password": password, "organisation_id": 1},
     )
     response = r.json()
     user = user_model.User(**response)

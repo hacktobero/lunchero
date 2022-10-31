@@ -1,18 +1,22 @@
 import passlib.hash as hash
 from sqlalchemy import Column, ForeignKey, Integer, String
 from sqlalchemy.orm import relationship
-from utils.database_utils import Base
+
+from models.base import Base
 
 
 class User(Base):
     __tablename__ = "users"
 
-    id = Column(Integer, primary_key=True, index=True)
-    email = Column(String, unique=True, index=True)
-    organisation_id = Column(Integer, ForeignKey("organisations.id"), nullable=False)
+    id: int = Column(Integer, primary_key=True, index=True)  # type: ignore
+    email: str = Column(String, unique=True, index=True)  # type: ignore
+    hashed_password: str = Column(String, nullable=False)  # type: ignore
+    organisation_id: int = Column(
+        Integer, ForeignKey("organisations.id"), nullable=False
+    )  # type: ignore
 
     organisation = relationship("Organisation", back_populates="users")
-    orders = relationship("Orders", back_populates="user")
+    orders = relationship("Order", back_populates="user")
 
     def verify_password(self, password: str):
         return hash.bcrypt.verify(password, self.hashed_password)

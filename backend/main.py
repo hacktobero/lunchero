@@ -1,13 +1,36 @@
 import re
 
-import schemas.user_schema as user_schema
-import services.user_service as user_service
 from fastapi import Depends, FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from sqlalchemy.orm import Session
-from utils.database_utils import Base, engine, get_db
+from sqlalchemy import create_engine
+from sqlalchemy.orm import Session, sessionmaker
 
-Base.metadata.create_all(bind=engine)
+import models.base as base
+import models.meal_model
+import models.menu_model
+import models.order_model
+import models.organisation_model
+import models.tag_model
+import models.user_model
+import schemas.user_schema as user_schema
+import services.user_service as user_service
+
+SQLALCHEMY_DATABASE_URL = "sqlite:///./sql_app.db"
+
+engine = create_engine(SQLALCHEMY_DATABASE_URL)
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+
+
+# Dependency
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
+
+
+base.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 

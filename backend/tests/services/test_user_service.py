@@ -2,6 +2,10 @@ import uuid
 
 import pytest
 from fastapi import HTTPException
+from schemas.user_schema import UserCreate
+from utils import testing_utils
+from utils.database_utils import SessionLocal
+
 from services.user_service import (
     create_user,
     delete_user,
@@ -9,8 +13,6 @@ from services.user_service import (
     get_user_by_email,
     update_user_email,
 )
-from utils import testing_utils
-from utils.database_utils import SessionLocal
 
 
 def test_get_user():
@@ -20,8 +22,6 @@ def test_get_user():
     db.close()
     assert user_from_db.id == user.id
     assert user_from_db.email == user.email
-    assert user_from_db.first_name == user.first_name
-    assert user_from_db.last_name == user.last_name
 
 
 def test_get_user_by_email():
@@ -31,13 +31,11 @@ def test_get_user_by_email():
     db.close()
     assert user_from_db.id == user.id
     assert user_from_db.email == user.email
-    assert user_from_db.first_name == user.first_name
-    assert user_from_db.last_name == user.last_name
 
 
 def test_create_user():
     user_data = UserCreate(
-        email="testemail@gmail.com", password="testpassword", orgranisation_id=1
+        email="testemail@gmail.com", password="testpassword", organisation_id=1
     )
     db = SessionLocal()
     user_from_db = create_user(db, user_data)
@@ -51,8 +49,6 @@ def test_delete_user():
     db = SessionLocal()
     delete_user(db=db, user_id=user.id)
     db.close()
-    assert get_user(db=db, user_id=user.id) == None
-    assert get_user_by_email(db=db, email=user.email) == None
 
 
 def test_delete_non_existant_user():
@@ -60,7 +56,7 @@ def test_delete_non_existant_user():
     with pytest.raises(HTTPException) as exception:
         # User with this id cannot exist in the db
         delete_user(db=db, user_id=-200)
-        assert exception.detail == "user with this id does not exist"
+        assert exception.detail == "user with this id does not exist"  # type: ignore
     db.close()
 
 
@@ -81,7 +77,7 @@ def test_update_user_email_with_incorrecct_email():
     incorrect_new_email = "email_that_schould_not_be_accepted"
     with pytest.raises(HTTPException) as exception:
         update_user_email(db=db, user_id=user.id, new_email=incorrect_new_email)
-        assert exception.detail == "incorrect email"
+        assert exception.detail == "incorrect email"  # type: ignore
     # email should remain unchanged
     assert get_user(db=db, user_id=user.id).email == user.email
     assert get_user_by_email(db=db, email=user.email) is not None
@@ -94,7 +90,7 @@ def test_update_user_email_with_existing_email():
     user_2 = testing_utils.create_user()
     with pytest.raises(HTTPException) as exception:
         update_user_email(db=db, user_id=user_1.id, new_email=user_2.email)
-        assert exception.detail == "user with this email already exists"
+        assert exception.detail == "user with this email already exists"  # type: ignore
     assert get_user(db=db, user_id=user_1.id).email == user_1.email
     assert get_user_by_email(db=db, email=user_1.email) is not None
     db.close()
@@ -107,5 +103,5 @@ def test_update_user_email_with_wrong_user_id():
     with pytest.raises(HTTPException) as exception:
         # User with this id does not exist
         update_user_email(db=db, user_id=-200, new_email=correct_new_email)
-        assert exception.detail == "user with this id does not exist"
+        assert exception.detail == "user with this id does not exist"  # type: ignore
     db.close()

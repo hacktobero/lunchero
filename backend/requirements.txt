@@ -8,3 +8,4 @@ pytest-xdist
 pytest-asyncio
 pytest-cov
 requests
+bcrypt
