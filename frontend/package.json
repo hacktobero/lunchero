@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "test": "jest",
+    "test:cov": "jest --coverage",
     "cypress": "cypress open",
     "cypress:headless": "cypress run"
   },
