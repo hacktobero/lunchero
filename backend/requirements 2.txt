@@ -1,5 +1,0 @@
-alembic
-fastapi
-passlib
-uvicorn
-sqlalchemy
