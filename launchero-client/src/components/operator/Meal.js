@@ -11,7 +11,7 @@ import Dish from './Dish';
 export default function Meal(props) {
 
     const context = useContext(MealsContext)
-    console.log(context);
+  
     return (
         <div className="flex border-b  h-auto border-b-green-500 text-lg justify-between flex-col items-center p-4 font-bold ">
             {context.show && <AddMeal></AddMeal>

@@ -8,12 +8,11 @@ import { MealsContext } from '../../../Context/Context';
 export default function Meal(props) {
 
 
-  const [show, setShow] = useState(false);
-
+    const [show, setShow] = useState(false);
     const context = useContext(MealsContext);
 
-    
-    
+    const mealsArray = context.data?.menu.meals; 
+    console.log(mealsArray);
 
 
     return (
@@ -34,10 +33,10 @@ export default function Meal(props) {
                 </div>
             </div>
             {show &&
-              <div className={'w-full'}>
-                <Dish name={props.meals.name} ingredients={props.meals.ingredients} id={props.meals.name}/>
-                <Dish name={props.meals.name} ingredients={props.meals.ingredients} id={props.meals.name}/>
-              </div>
+                <div className={'w-full'}>
+                    <Dish name={props.meals.name} ingredients={props.meals.ingredients} id={props.meals.name} />
+                    <Dish name={props.meals.name} ingredients={props.meals.ingredients} id={props.meals.name} />
+                </div>
             }
         </div>
     )

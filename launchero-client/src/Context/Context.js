@@ -62,9 +62,11 @@ export default function ContextProvider ({children}) {
 
   function removeFromCart (id) {
     setCartItems(currItems => {
-      return currentItems.map(item => item.id !== id)
+      return currItems.map(item => item.id !== id)
     })
   }
+
+  
 
   const initialValues = {
     getItemQuantity,

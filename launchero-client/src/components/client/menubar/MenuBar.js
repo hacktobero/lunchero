@@ -20,7 +20,7 @@ export default function MenuBar() {
     ingredients: 'ingredients: chleb, łosoś'
   }
 
-console.log(meals);
+
   return (
 
     <div className={'flex flex-col p-5 w-3/4 h-2/3 justify-center self-center shadow-xl'}>
