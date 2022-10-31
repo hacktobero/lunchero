@@ -1,18 +1,19 @@
 import json
+from datetime import datetime
 
 from pydantic import BaseModel
 
 
-class UserBase(BaseModel):
-    email: str
-    organisation_id: str
+class MenuBase(BaseModel):
+    day: datetime
+    organisation_id: int
 
 
-class UserCreate(UserBase):
-    password: str
+class MenuCreate(MenuBase):
+    pass
 
 
-class User(UserBase):
+class Menu(MenuBase):
     id: int
 
     class Config:
