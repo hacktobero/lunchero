@@ -11,8 +11,12 @@ export default function Meal(props) {
     const [show, setShow] = useState(false);
     const context = useContext(MealsContext);
 
-    const mealsArray = context.data?.menu.meals; 
-    console.log(mealsArray);
+    // const meals = context?.data?.menu.meals;
+   
+    // const breakfastMeals = meals.filter(meal => meal.type === 'Breakfast');
+    // const lunchMeals = meals.filter(meal => meal.type === 'Lunch');
+    // const extraMeals = meals.filter(meal => meal.type === 'Extra');
+    
 
 
     return (
