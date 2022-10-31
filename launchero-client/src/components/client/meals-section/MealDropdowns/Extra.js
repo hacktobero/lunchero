@@ -27,7 +27,7 @@ export default function Extra({meals}) {
                 <div className={'w-full'}>
                     {meals.map((meal) => {
                         return (
-                            <Dish name={meal.name} ingredients={meal.ingredients} id={meal.id} />
+                            <Dish key={meal.id} name={meal.name} ingredients={meal.ingredients} id={meal.id} />
                         )
                     })}
                 </div>
