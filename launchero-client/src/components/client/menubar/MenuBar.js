@@ -2,9 +2,7 @@ import Meal from "../meals-section/Meal";
 import Tab from "./Tab";
 import {useContext, useState} from 'react';
 import {MealsContext} from "../../../Context/Context";
-import Breakfast from "../meals-section/MealDropdowns/Breakfast";
-import Lunch from "../meals-section/MealDropdowns/Lunch";
-import Extra from "../meals-section/MealDropdowns/Extra";
+
 
 export default function MenuBar() {
 
