@@ -8,7 +8,7 @@ const AddMeal = () => {
 
     return(
         <div className=' fixed justify-center flex items-center top-0 h-screen bg-backdrop w-full '>
-                        <div className='flex flex-col lg:h-2/5 xl:h-1/2 xxl:h-2/5 sm:w-1/2 h-1/2 shadow-lg opacity-95 bg-white rounded-md  self-center relative'>
+                        <div className='flex flex-col h-auto w-4/5 lg:w-1/2 shadow-lg opacity-95 bg-white rounded-md  self-center relative'>
                                 <button className="right-4 z-10 top-3 absolute" 
                                 onClick={() =>{ 
                                 context.showHandler()
@@ -16,16 +16,14 @@ const AddMeal = () => {
                                 <FaRegTimesCircle/>
                                 </button>
 
-                                <div className="grid w-9/10 xl:mt-0 xxl:mt-10 sm:mt-0 text-black self-center py-6 px-5 relative">
-                                    <form className='grid grid-cols-2 '>
-
-                                        <div className='flex xl:mb-5 xxl:mb-10 sm:mb-0 my-4 col-span-2 gap-14'>
-                                            <div className='grid sm:col-span-2 lg:col-span-1 w-2/3'>
+                                <div className="grid h-auto w-9/10 xl:mt-0 xxl:mt-10 sm:mt-0 text-black self-center py-6 px-5 relative">
+                                    <form className='grid lg:grid-cols-2 grid-cols-1 lg:gap-8'>
+                                            <div className='grid lg:col-span-1  col-span-2 w-2/3'>
                                             <label className={'font-bold'}>Meal name</label>
                                             <input className={'rounded-lg flex-col text-black bg-gray-300 mt-2  outline-none p-2 shadow-xl   focus:border-gray-300'} ></input>
                                             </div>
 
-                                            <div className='grid w-1/4'>
+                                            <div className='grid w-1/4 col-span-1 lg:ml-20'>
                                             <label className={'font-bold'}>Preferences</label>
                                             <select required className="flex-col rounded-lg text-black bg-gray-300 mt-2  outline-none p-2    shadow-xl focus:border-gray-300">
                                                 <option value=""></option>
@@ -34,13 +32,12 @@ const AddMeal = () => {
                                                 <option value="Keto">Keto</option>
                                             </select>  
                                             </div>
-                                        </div>
                                         <div className="grid xl:mb-0 xxl:mb-10 sm:mb-0 col-span-2 text-black w-full relative">
                                         <label className={'font-bold'}>Ingredients</label>
                                         <input className={'rounded-lg text-black bg-gray-300 mt-2  outline-none p-2  shadow-xl focus:border-gray-300'} ></input>
                                         </div>
-                                        <div className='flex my-4 col-span-2 gap-40'>
-                                            <div className='grid col-span-1 w-1/2'>
+                                        <div className='flex my-4 col-span-2 gap-10 lg:gap-40'>
+                                            <div className='grid lg:col-span-1 col-span-2 w-1/2'>
                                                 <label className={'font-bold'}>Type</label>
                                                 <select required className="flex-col rounded-lg text-black bg-gray-300   outline-none p-2 shadow-xl focus:border-gray-300">
                                                     <option value=""></option>

@@ -35,7 +35,7 @@ const Login =  () => {
                         </div>
                     </div>
                     <div className="w-full flex flex-col items-center">
-                      <button className="w-1/2 justify-center font-bold text-lg drop-shadow-xl m-auto content-center text-white xxl:mt-14 mt-6 py-3 bg-green-500 rounded-lg hover:bg-lite-graphite focus:bg-super-lite-graphite">Zaloguj</button>
+                      <button className="w-1/2 justify-center font-bold text-lg drop-shadow-xl m-auto content-center text-white xxl:mt-14 mt-6 py-3 bg-green-500 rounded-lg hover:bg-green-600 focus:bg-green-700">Zaloguj</button>
                     </div>
                 </form>
             </div>
