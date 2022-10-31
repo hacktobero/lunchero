@@ -8,8 +8,8 @@ services:
     stdin_open: true
     volumes:
       - lunchero-be:/backend
-    networks:
-      - frontend
+    ports:
+     - "8000:8000"
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.backend.rule=Host(`lunchero.kcem.pl`) && PathPrefix(`/api`) || Path(`/docs`) || Path(`/openapi.json`)"
@@ -17,7 +17,3 @@ services:
       - "traefik.http.routers.backend.tls.certresolver=letsencrypt"
 volumes:
   lunchero-be:
-
-networks:
-  frontend:
-    external: true
