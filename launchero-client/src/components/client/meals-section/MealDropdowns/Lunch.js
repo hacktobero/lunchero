@@ -3,7 +3,7 @@ import { MdArrowDropDown, MdArrowDropUp } from 'react-icons/md';
 import { IconContext } from 'react-icons';
 import Dish from "../Dish";
 
-export default function Lunch({meals}) {
+export default function Lunch({ meals }) {
 
     const [show, setShow] = useState(false);
 
