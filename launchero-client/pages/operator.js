@@ -1,4 +1,4 @@
-import Operator from "../src/components/operator/Operator"
+import Operator from "../src/components/operator/operatorView/Operator"
 
 const operatorRender = () => { 
     return(

@@ -43,7 +43,7 @@ const AddMeal = () => {
                                                     <option value=""></option>
                                                     <option value="Breakfast">Breakfast</option>
                                                     <option value="Lunch">Lunch</option>
-                                                    <option value="Dessert">Dessert</option>
+                                                    <option value="Extra">Extra</option>
                                                 </select>  
                                             </div>
 
