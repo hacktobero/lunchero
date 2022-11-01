@@ -5,7 +5,6 @@ WORKDIR /code/
 COPY . /code/
 
 RUN pip install -r requirements.txt
-RUN alembic upgrade head
 
 EXPOSE 8000
 
