@@ -40,8 +40,8 @@ async def test_authenticate_user_with_correct_data():
         email=user.email, password="a_specific_password", db=db
     )
     db.close()
-    assert authenticated_user.id == user.id
-    assert authenticated_user.email == user.email
+    assert authenticated_user.id == user.id  # type: ignore
+    assert authenticated_user.email == user.email  # type: ignore
 
 
 @pytest.mark.asyncio
