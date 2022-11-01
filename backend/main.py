@@ -16,12 +16,9 @@ import models.user_model
 import schemas.user_schema as user_schema
 import services.user_service as user_service
 import utils.authentication_utils as authentication_utils
-from utils.database_utils import engine, get_db
-
-base.Base.metadata.create_all(bind=engine)
+from utils.database_utils import get_db
 
 app = FastAPI()
-
 
 origins = ["http://127.0.0.1:8000", "http://localhost:8000"]
 
