@@ -3,7 +3,7 @@ import Tab from '../src/components/menubar/Tab'
 import '@testing-library/jest-dom'
 
 describe('Home', () => {
-    it('renders a heading', () => {
+    it('It renders a set day of the month', () => {
         render(<Tab day="Monday" active="Monday" onDayChange={() => { }} />)
 
         const text = screen.getByText('Monday')
