@@ -47,6 +47,7 @@ const AddMenu = () => {
                  <div className="">
                      <Meal meals={meals}></Meal>
                  </div>
+                 <button  className={'flex p-4 m-auto mt-5 duration-200 font-bold justify-center shadow-sm self-center items-center w-1/6 rounded-2xl text-white bg-green-400 hover:bg-green-500 focus:bg-green-700'}>Confirm</button>
             </div>
     )
  }
