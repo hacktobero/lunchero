@@ -1,32 +1,48 @@
 import Navbar from "../navbar"
 import { useState } from "react";
-
+import Tab from "../client/menubar/Tab";
+import Meal from "./Meal";
+import { IoMdAdd } from 'react-icons/io';
+import { useRouter } from "next/router";
+import AddMenu from "./operatorView/OperatorAddMenu";
+import Orders from "./operatorView/OperatorOrders";
 
 const Operator = () => { 
 
-    const name = 'operator#1'
-    const [show, setShow] = useState(false);
+    const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+
+
+    const [activeDay, setActiveDay] = useState('');
+    const [mealName, SetMealName] = useState('')
+    const [ordersPush, SetOrdersPush] = useState(false)
+
+    const router = useRouter();
+
+
+
+    const meals = {
+        name: 'essa',
+        ingredients: 'esaas',
+        type:'',
+        preferences:''
+      }
+
+
     return(
-        <>
-        <Navbar name={name}></Navbar>
-        <div className="flex border-b  h-auto border-b-green-500 text-lg justify-between flex-col items-center p-4 font-bold ">
-            <div className='flex justify-between items-center w-full duration-200  hover:text-green-500'>
-                <h1>Breakfast</h1>
-                <div>
-                    <button onClick={() => setShow(!show)} className='border rounded-full w-24 h-12 border-green-500 bg-green-500 text-white px-2 py-1  font-bold '>{show ? 'Hide' : 'Show'}</button>
-                </div>
+        <div className={"flex flex-col"}>
+            <div className="flex">
+                <Navbar></Navbar>
             </div>
-            {show &&
-                <div className='w-3/4  mx-auto flex justify-between items-center'>
-                    <div>
-                        <p>Kanapka z łososiem</p>
-                        <p className='text-sm  text-gray-300'>Składniki: chleb, łosoś</p>
-                    </div>
-                    <button className="bg-green-500  text-white font-bold w-10 h-10 text- rounded-full">+</button>
-                </div>
-            }
+
+            <div className="flex h-8 justify-center">
+                <button onClick={()=> SetOrdersPush(true)} className={`w-1/6 text-white shadow-lg bg-green-400 rounded-bl-xl ${ordersPush && ' bg-green-800 text-white'}`}>Add menu</button>
+                <button onClick={()=> SetOrdersPush(false)} className={`w-1/6 text-white shadow-lg bg-green-400 rounded-br-xl ${!ordersPush && ' bg-green-800 text-white'}`}>Orders</button>
+            </div>
+
+            {ordersPush&&<AddMenu></AddMenu>}
+            
+            {!ordersPush&&<Orders></Orders>}
         </div>
-        </>
     )
  }
 

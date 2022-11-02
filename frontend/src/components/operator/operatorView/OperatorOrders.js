@@ -1,6 +1,6 @@
 import Meal from "../Meal";
 
-const OperatorOrders = () => { 
+const Orders = () => { 
     return(
         <div className="justify-center w-5/10 m-auto">
             <Meal />
@@ -8,4 +8,4 @@ const OperatorOrders = () => {
     )
  }
 
- export default OperatorOrders
+ export default Orders
