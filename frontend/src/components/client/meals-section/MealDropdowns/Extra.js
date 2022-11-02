@@ -4,7 +4,6 @@ import { IconContext } from 'react-icons';
 import Dish from "../Dish";
 
 export default function Extra({meals}) {
-    console.log(meals);
     const [show, setShow] = useState(false);
     return (
         <>

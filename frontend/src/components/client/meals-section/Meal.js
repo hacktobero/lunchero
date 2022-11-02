@@ -8,7 +8,7 @@ import Lunch from './MealDropdowns/Lunch';
 import Extra from './MealDropdowns/Extra';
 
 
-export default function Meal({ children }) {
+export default function Meal() {
 
     const context = useContext(MealsContext);
 

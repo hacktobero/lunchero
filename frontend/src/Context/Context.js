@@ -10,6 +10,8 @@ export default function ContextProvider ({children}) {
   const [show, setShow] = useState(false);
   const [cartItems, setCartItems] = useState([]);
 
+ 
+
   const showHandler = () => {
     setShow(!show)
    }

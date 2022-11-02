@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import { MealsContext } from "../Context/Context"
-const Navbar = (props) => {
+const Navbar = () => {
 
     const context = useContext(MealsContext);
 
@@ -17,7 +17,7 @@ const Navbar = (props) => {
                 <p className='w-full sm:ml-1 lg:ml-0 lg:text-xl sm:text-lg text-center'>{context.data?.user?.username}</p>
             </div>
             <div className='text-5xl w-2/3 flex justify-end items-center'>
-                <p className=' text-green-400 font-bold'>Lunchero</p>
+                <p data-testid='logo' className=' text-green-400 font-bold'>Lunchero</p>
             </div>
         </div>
     )

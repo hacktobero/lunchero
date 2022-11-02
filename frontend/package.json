@@ -13,6 +13,7 @@
     "cypress:headless": "cypress run"
   },
   "dependencies": {
+    "enzyme": "^3.11.0",
     "framer-motion": "^7.6.2",
     "next": "13.0.0",
     "react": "18.2.0",
