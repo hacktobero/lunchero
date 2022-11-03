@@ -6,6 +6,8 @@ services:
     build:
       context: backend
     stdin_open: true
+    environment:
+      DB_CONNECTION_URL: ${DB_CONNECTION_URL}
     ports:
      - "8000:8000"
     labels:
@@ -13,4 +15,17 @@ services:
       - "traefik.http.routers.backend.rule=Host(`lunchero.kcem.pl`) && PathPrefix(`/api`) || Path(`/docs`) || Path(`/openapi.json`)"
       - "traefik.http.routers.backend.entrypoints=websecure"
       - "traefik.http.routers.backend.tls.certresolver=letsencrypt"
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: lunchero_backend
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
 
+volumes:
+  postgres_data:
+    driver: local
