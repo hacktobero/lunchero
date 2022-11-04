@@ -23,9 +23,8 @@ export default function ContextProvider ({children}) {
     getData();
   }, []);
 
-
   function getItemQuantity(id) {
-    return cartItems.find(item => item.id === id)?.quantity || 0
+    return cartItems?.find(item => item.id === id)?.quantity || 0
   }
 
   function increaseCartQuantity (id) {
@@ -66,13 +65,13 @@ export default function ContextProvider ({children}) {
     })
   }
 
-  
 
   const initialValues = {
-    getItemQuantity,
-    increaseCartQuantity,
-    decreaseCartQuantity,
     removeFromCart,
+    decreaseCartQuantity,
+    increaseCartQuantity,
+    getItemQuantity,
+    setCartItems,
     cartItems,
     data,
     show,
