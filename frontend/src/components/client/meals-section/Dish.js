@@ -7,7 +7,7 @@ import { useContext } from "react";
 
 export default function Dish({ name, ingredients, id }) {
 
-  const { getItemQuantity, increaseCartQuantity, decreaseCartQuantity,  } = useContext(MealsContext)
+  const { getItemQuantity, increaseCartQuantity, decreaseCartQuantity } = useContext(MealsContext)
 
   const quantity = getItemQuantity(id)
 
