@@ -1,23 +1,34 @@
-import { useContext } from "react"
+import { useState, useEffect } from "react"
 import { MealsContext } from "../Context/Context"
 const Navbar = () => {
 
-    const context = useContext(MealsContext);
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        const getData = async () => {
+          const res = await fetch("/data.json");
+          const data = await res.json();
+          setData(data)
+        };
+        getData();
+    }, []);
 
     const profilePhoto = [{
         photo: 'https://freepikpsd.com/file/2019/10/default-profile-picture-png-1-Transparent-Images.png'
-    }]
+    }];
 
-    
+    const { user } = data;
+
     return (
 
         <div className=" w-full h-1/12 flex  md:flex shadow-lg">
             <div className='flex lg:mx-10 lg:my-4 lg:p-8 sm:p-3 sm:my-0 lg:w-28  sm:w-20 rounded flex-col cursor-pointer ease-in-out duration-150 '>
                 <img className="shadow-lg  h-full ml-8 flex self-center rounded-full " src={profilePhoto[0].photo}></img>
-                <p className='w-full sm:ml-1 lg:ml-0 lg:text-xl sm:text-lg text-center'>{context.data?.user?.username}</p>
+                {!user && <h2 className='w-full sm:ml-1 lg:ml-0 lg:text-xl sm:text-lg text-center'>You are not currently logged in</h2>}
+                {user && <h2 className='w-full sm:ml-1 lg:ml-0 lg:text-xl sm:text-lg text-center'>{user.username}</h2>}
             </div>
             <div className='text-5xl w-2/3 flex justify-end items-center'>
-                <p data-testid='logo' className=' text-green-400 font-bold'>Lunchero</p>
+                <h1 className=' text-green-400 font-bold'>Lunchero</h1>
             </div>
         </div>
     )
