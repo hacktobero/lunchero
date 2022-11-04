@@ -13,10 +13,32 @@ describe('if dish counter work', () => {
 //     </MealsContext.Provider> )
 //  }
 
+  const setState = jest.fn();
+
+
   test('+ button increase quantity', () => {
-    const increaseCartQuantity = jest.fn(() =>  10)
-    const decreaseCartQuantity = jest.fn(() =>  10)
-    const getItemQuantity = jest.fn(() =>  10)
+    let cartItems = [];
+    const setCartItems = jest.fn(()=>cartItems.push({id:10,getItemQuantity:1}));
+
+
+    const increaseCartQuantity = jest.fn((id)=>  {
+      setCartItems (currentItems => {
+      if (currentItems.find(item => item.id === id) == null) {
+        return [...currentItems, {id, quantity:1}]
+      } else {
+        return currentItems.map(item => {
+          if (item.id === id) {
+            return {...item, quantity: item.quantity + 1}
+          } else {
+            return item
+          }
+        })
+      }
+    })
+    })
+    const decreaseCartQuantity = jest.fn()
+    const getItemQuantity = jest.fn((id)=> cartItems?.find(item => item.id === id)?.quantity || 0)
+
     render(
       <MealsContext.Provider value={{ getItemQuantity, increaseCartQuantity, decreaseCartQuantity }} >
         <Dish />
@@ -24,9 +46,12 @@ describe('if dish counter work', () => {
 
 
     const buttonElement = screen.getByRole("increaseCartQuantity")
+
     fireEvent.click(buttonElement)
 
-    expect(getItemQuantity).toEqual("quantity:1")
+    const divElement = screen.getByRole("itemsCounter")
+
+    expect(divElement).toEqual("1")
   })
 })
 
