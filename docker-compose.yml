@@ -20,6 +20,8 @@ services:
       - postgres
     networks:
       - api
+    links:
+      - "postgres:postgres"
     
   postgres:
     image: postgres:15-alpine
