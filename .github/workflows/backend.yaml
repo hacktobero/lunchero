@@ -12,14 +12,14 @@ jobs:
       - uses: actions/checkout@v2
       - uses: isbang/compose-action@v1.4.0
         with:
-          env:
+          env: |
             POSTGRES_PASSWORD: postgres
             POSTGRES_USER: postgres
             DB_CONNECTION_URL: postgresql+psycopg2://postgres:postgres@postgres/lunchero_backend
       - name: Run migrations
         run: docker-compose exec backend alembic upgrade head
       - name: Tests with pytest
-        run: docker-compose exec backend PYTHONPATH=. pytest -n 4
+        run: docker-compose exec backend pytest -n 4
   lint:
     runs-on: ubuntu-latest
     defaults:
