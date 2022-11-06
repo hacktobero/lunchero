@@ -1,5 +1,6 @@
 import React, {useEffect, useState } from "react"
 
+
 export const MealsContext = React.createContext({});
 
 
@@ -14,14 +15,18 @@ export default function ContextProvider ({children}) {
     setShow(!show)
    }
 
-  // useEffect(() => {
-  //     const getData = async () => {
-  //       const res = await fetch("/data.json");
-  //       const data = await res.json();
-  //       setData(data)
-  //     };
-  //     getData();
-  // }, []);
+  useEffect(() => {
+      async function getData () {
+        try {
+          const res = await fetch("/data.json");
+          const data = await res.json();
+          setData(data)
+        } catch (e) {
+          console.log(e)
+        }
+      }
+      getData();
+  }, []);
 
   function getItemQuantity(id) {
     return cartItems?.find(item => item.id === id)?.quantity || 0
