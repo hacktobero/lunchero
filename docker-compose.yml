@@ -18,6 +18,9 @@ services:
       - "traefik.http.routers.backend.tls.certresolver=letsencrypt"
     depends_on: 
       - postgres
+    networks:
+      - api
+    
   postgres:
     image: postgres:15-alpine
     environment:
@@ -28,7 +31,13 @@ services:
       - postgres_data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
+    networks:
+      - api
 
 volumes:
   postgres_data:
     driver: local
+
+api:
+  name: api
+  driver: bridge
