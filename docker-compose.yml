@@ -38,6 +38,7 @@ volumes:
   postgres_data:
     driver: local
 
-api:
-  name: api
-  driver: bridge
+networks:
+  api:
+    name: api
+    driver: bridge
