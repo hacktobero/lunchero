@@ -10,8 +10,6 @@ services:
       DB_CONNECTION_URL: ${DB_CONNECTION_URL}
       PYTHONPATH: .
     restart: always
-    ports:
-     - "8000:8000"
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.backend.rule=Host(`lunchero.kcem.pl`) && PathPrefix(`/api`) || Path(`/docs`) || Path(`/openapi.json`)"
@@ -29,8 +27,6 @@ services:
       POSTGRES_DB: lunchero_backend
     volumes:
       - postgres_data:/var/lib/postgresql/data
-    ports:
-      - "5432:5432"
     network_mode: "host"
 
 volumes:
