@@ -1,7 +1,7 @@
 import '@testing-library/react'
 import React from "react";
 import {fireEvent, render, screen} from "@testing-library/react";
-import {MealsContext} from "../src/Context/Context";
+import ContextProvider from "../src/Context/Context";
 import Dish from "../src/components/client/meals-section/Dish";
 
 
@@ -17,9 +17,10 @@ describe('if dish counter work', () => {
     const getItemQuantity = jest.fn(() => {})
 
     render(
-      <MealsContext.Provider value={{ getItemQuantity, increaseCartQuantity, decreaseCartQuantity }} >
+      <ContextProvider value={{ getItemQuantity, increaseCartQuantity, decreaseCartQuantity }} >
         <Dish id={10} />
-      </MealsContext.Provider> )
+      </ContextProvider>
+    )
 
 
     const buttonElement = screen.getByRole("increaseCartQuantity")
