@@ -16,8 +16,10 @@ services:
       - "traefik.http.routers.backend.rule=Host(`lunchero.kcem.pl`) && PathPrefix(`/api`) || Path(`/docs`) || Path(`/openapi.json`)"
       - "traefik.http.routers.backend.entrypoints=websecure"
       - "traefik.http.routers.backend.tls.certresolver=letsencrypt"
+    depends_on: 
+      - postgres
   postgres:
-    image: postgres:15
+    image: postgres:15-alpine
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
