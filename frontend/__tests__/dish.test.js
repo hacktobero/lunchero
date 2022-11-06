@@ -5,6 +5,33 @@ import {fireEvent, render, screen} from "@testing-library/react";
 import ContextProvider from "../src/Context/Context";
 import Dish from "../src/components/client/meals-section/Dish";
 
+describe('if dish is rendered correctly ', () => {
+
+  test('the meal name is present', () => {
+
+    render(
+      <ContextProvider >
+        <Dish name={"kanapka z tuńczykiem"} />
+      </ContextProvider> )
+
+    const name = screen.getByText("kanapka z tuńczykiem")
+
+    expect(name).toBeInTheDocument();
+  })
+
+  test('the meal ingredients is present', () => {
+
+    render(
+      <ContextProvider >
+        <Dish ingredients={"Steak, Fries"} />
+      </ContextProvider> )
+
+    const ingredients = screen.getByText("Ingredients: Steak, Fries")
+
+    expect(ingredients).toBeInTheDocument();
+  })
+
+})
 
 describe('if dish counter work', () => {
 
@@ -38,5 +65,3 @@ describe('if dish counter work', () => {
     expect(screen.getByText("1")).toBeInTheDocument();
   })
 })
-
-
