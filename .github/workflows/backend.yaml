@@ -16,9 +16,9 @@ jobs:
           POSTGRES_USER: postgres
           DB_CONNECTION_URL: postgresql+psycopg2://postgres:postgres@postgres/lunchero_backend
       - name: Run migrations
-        run: docker-compose exec backend alembic upgrade head
+        run: docker-compose exec -T backend alembic upgrade head
       - name: Tests with pytest
-        run: docker-compose exec backend pytest -n 4
+        run: docker-compose exec -T backend pytest -n 4
   lint:
     runs-on: ubuntu-latest
     defaults:
