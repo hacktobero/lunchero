@@ -11,8 +11,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: isbang/compose-action@v1.4.0
-        with:
-          up-flags: "-d"
         env: 
           POSTGRES_PASSWORD: postgres
           POSTGRES_USER: postgres
