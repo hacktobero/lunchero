@@ -14,14 +14,14 @@ export default function ContextProvider ({children}) {
     setShow(!show)
    }
 
-  useEffect(() => {
-    const getData = async () => {
-      const res = await fetch("/data.json");
-      const data = await res.json();
-      setData(data)
-    };
-    getData();
-  }, []);
+  // useEffect(() => {
+  //     const getData = async () => {
+  //       const res = await fetch("/data.json");
+  //       const data = await res.json();
+  //       setData(data)
+  //     };
+  //     getData();
+  // }, []);
 
   function getItemQuantity(id) {
     return cartItems?.find(item => item.id === id)?.quantity || 0

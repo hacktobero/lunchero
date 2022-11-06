@@ -1,5 +1,6 @@
-import '@testing-library/react'
 import React from "react";
+import '@testing-library/react';
+import '@testing-library/jest-dom';
 import {fireEvent, render, screen} from "@testing-library/react";
 import ContextProvider from "../src/Context/Context";
 import Dish from "../src/components/client/meals-section/Dish";
@@ -7,29 +8,34 @@ import Dish from "../src/components/client/meals-section/Dish";
 
 describe('if dish counter work', () => {
 
-  const setState = jest.fn();
-
-
   test('+ button increase quantity', () => {
 
-    const increaseCartQuantity = jest.fn(() => {})
-    const decreaseCartQuantity = jest.fn(() => {})
-    const getItemQuantity = jest.fn(() => {})
-
     render(
-      <ContextProvider value={{ getItemQuantity, increaseCartQuantity, decreaseCartQuantity }} >
+      <ContextProvider >
         <Dish id={10} />
-      </ContextProvider>
-    )
-
+      </ContextProvider> )
 
     const buttonElement = screen.getByRole("increaseCartQuantity")
 
     fireEvent.click(buttonElement)
 
-    const divElement = screen.getByRole("itemsCounter")
+    expect(screen.getByText("1")).toBeInTheDocument();
+  })
 
-    expect(divElement).toEqual("1")
+  test('- button decrease quantity', () => {
+
+    render(
+      <ContextProvider >
+        <Dish id={10} />
+      </ContextProvider> )
+
+    const increaseButtonElement = screen.getByRole("increaseCartQuantity")
+    const decreaseButtonElement = screen.getByRole("decreaseCartQuantity")
+    fireEvent.click(increaseButtonElement)
+    fireEvent.click(increaseButtonElement)
+    fireEvent.click(decreaseButtonElement)
+
+    expect(screen.getByText("1")).toBeInTheDocument();
   })
 })
 
