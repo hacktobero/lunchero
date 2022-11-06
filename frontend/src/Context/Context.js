@@ -22,7 +22,7 @@ export default function ContextProvider ({children}) {
           const data = await res.json();
           setData(data)
         } catch (e) {
-          console.log(e)
+
         }
       }
       getData();
