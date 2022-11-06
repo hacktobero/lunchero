@@ -8,6 +8,7 @@ services:
     stdin_open: true
     environment:
       DB_CONNECTION_URL: ${DB_CONNECTION_URL}
+      PYTHONPATH: .
     ports:
      - "8000:8000"
     labels:
