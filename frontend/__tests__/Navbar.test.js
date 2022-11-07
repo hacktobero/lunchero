@@ -1,7 +1,10 @@
 import Navbar from "../src/components/navbar";
+import { MealsContext } from "../src/Context/Context";
+import ContextProvider from "../src/Context/Context";
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import { act } from 'react-dom/test-utils';
+
+
 describe('Navbar component', () => {
 
     test('renders correct name of the company', () => {
@@ -19,14 +22,24 @@ describe('Navbar component', () => {
     test('renders correct name if the user is not currently logged in', () => {
         render(<Navbar />);
         const userNameElement = screen.getByTestId('username').textContent;
-        expect(userNameElement).toMatch('You are currently not logged in');
+        expect(userNameElement).toMatch('Loading...');
     });
+    
+    test('renders correct name of the currently logged in user', async () => {
+        render(
+        <MealsContext.Provider value={{
+            data: {
+                user: {
+                    username: 'pawel2'
+                }
+            }
+        }}>
+        <Navbar />
+        </MealsContext.Provider>);
+        const userNameElement = await screen.findByText('pawel2');
+        expect(userNameElement).toBeInTheDocument();
+    })
 
-    test('renders correct name of the user that is currently logged in', async () => {
-        render(<Navbar />)
-        const userNameElement = await screen.findByText('pawelsdjjd2');
-        expect(userNameElement).to
-    });
 
 
 });
