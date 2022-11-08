@@ -25,7 +25,7 @@ export default function MenuBar() {
       <div className={'flex w-full h-20 self-center justify-around'}>
         {days.map((day, index) => {
           return (
-            <Tab key={index} day={day}  active={activeDay} onDayChange={setDayHandler} />
+            <Tab key={index} day={day} role='day' active={activeDay} onDayChange={setDayHandler} />
           )
         })}
       </div>
