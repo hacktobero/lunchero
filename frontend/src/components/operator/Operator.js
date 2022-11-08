@@ -1,7 +1,7 @@
 import Navbar from "../navbar"
 import { useState } from "react";
 import Tab from "../client/menubar/Tab";
-import Meal from "./Meal";
+import Meal from "./MealOperator";
 import { IoMdAdd } from 'react-icons/io';
 import { useRouter } from "next/router";
 import AddMenu from "./operatorView/OperatorAddMenu";

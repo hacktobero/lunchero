@@ -11,7 +11,7 @@ const Navbar = (props) => {
     
     return (
 
-        <div className=" w-full h-1/12 flex  md:flex shadow-lg">
+        <div className=" w-full flex  md:flex shadow-lg">
             <div className='flex lg:mx-10 lg:my-4 lg:p-8 sm:p-3 sm:my-0 lg:w-28  sm:w-20 rounded flex-col cursor-pointer ease-in-out duration-150 '>
                 <img className="shadow-lg  h-full ml-8 flex self-center rounded-full " src={profilePhoto[0].photo}></img>
                 <p className='w-full sm:ml-1 lg:ml-0 lg:text-xl sm:text-lg text-center'>{context.data?.user?.username}</p>

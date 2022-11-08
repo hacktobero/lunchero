@@ -15,10 +15,10 @@ export default function ContextProvider ({children}) {
    }
 
   useEffect(() => {
-    const getData = async () => {
-      const res = await fetch("/data.json");
+   const getData = async () => {
+      try {const res = await fetch("/data.json");
       const data = await res.json();
-      setData(data)
+      setData(data)}catch(error){console.log(error.message);}
     };
     getData();
   }, []);
