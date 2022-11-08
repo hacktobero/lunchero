@@ -11,7 +11,7 @@ describe('if dish is rendered correctly ', () => {
 
     render(
       <ContextProvider >
-        <Dish name={"kanapka z tuńczykiem"} />
+        <Dish name="kanapka z tuńczykiem" />
       </ContextProvider> )
 
     const name = screen.getByText("kanapka z tuńczykiem")
@@ -23,7 +23,7 @@ describe('if dish is rendered correctly ', () => {
 
     render(
       <ContextProvider >
-        <Dish ingredients={"Steak, Fries"} />
+        <Dish ingredients="Steak, Fries" />
       </ContextProvider> )
 
     const ingredients = screen.getByText("Ingredients: Steak, Fries")
