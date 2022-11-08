@@ -29,7 +29,8 @@ export default function ContextProvider ({children}) {
   }, []);
 
   function getItemQuantity(id) {
-    return cartItems?.find(item => item.id === id)?.quantity || 0
+    const { quantity = 0 } = cartItems.find(item => item.id === id) || {};
+    return quantity;
   }
 
   function increaseCartQuantity (id) {
