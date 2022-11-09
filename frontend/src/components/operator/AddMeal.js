@@ -27,7 +27,7 @@ const AddMeal = () => {
     
 
     return(
-        <div role='mainDiv' className=' fixed justify-center flex items-center top-0 h-screen bg-backdrop w-full '>
+        <div role='AddMealMainDiv' className=' fixed justify-center flex items-center top-0 h-screen bg-backdrop w-full '>
                         <div className='flex flex-col h-auto w-4/5 lg:w-1/2 shadow-lg opacity-95 bg-white rounded-md  self-center relative'>
                                 <button className="right-4 z-10 top-3 absolute" 
                                 role='closeButton'
