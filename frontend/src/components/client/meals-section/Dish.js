@@ -11,7 +11,7 @@ export default function Dish({ name, ingredients, id }) {
   const quantity = getItemQuantity(id)
 
   return (
-    <div className='w-full p-3 cursor-pointer duration-200 border-green-300 rounded-md flex justify-between items-center shadow-lg'>
+    <div role='dish' className='w-full p-3 cursor-pointer duration-200 border-green-300 rounded-md flex justify-between items-center shadow-lg'>
       <div>
         <p className='text-xl'>{name}</p>
         <p className='text-sm  text-gray-300'> {`Ingredients: ${ingredients}`}</p>
