@@ -11,8 +11,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: isbang/compose-action@v1.4.0
-        services: |
-          backend
+        with:
+          services: |
+            backend
         env: 
           DB_CONNECTION_URL: sqlite:///./sql_app.db
       - name: Run migrations
