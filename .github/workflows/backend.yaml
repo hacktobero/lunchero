@@ -16,6 +16,7 @@ jobs:
             backend
         env: 
           DB_CONNECTION_URL: sqlite:///./sql_app.db
+          RUNNING_INSIDE_GITHUB_ACTIONS: yes_we_are_running_on_github_actions
       - name: Run migrations
         run: docker-compose exec -T backend alembic upgrade head
       - name: Tests with pytest
