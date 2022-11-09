@@ -8,6 +8,7 @@ services:
     stdin_open: true
     environment:
       DB_CONNECTION_URL: ${DB_CONNECTION_URL}
+      RUNNING_INSIDE_GITHUB_ACTIONS: ${RUNNING_INSIDE_GITHUB_ACTIONS}
       PYTHONPATH: .
     restart: always
     labels:
