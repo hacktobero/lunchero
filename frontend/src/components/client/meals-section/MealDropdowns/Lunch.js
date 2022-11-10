@@ -25,7 +25,7 @@ export default function Lunch({ meals }) {
                 </div>
             </div>
             {show &&
-                <div className={'w-full'}>
+                <div role='meals-container' className={'w-full'}>
                     {meals.map((meal) => {
                         return (
                             <Dish key={meal.id} name={meal.name} ingredients={meal.ingredients} id={meal.id} />
