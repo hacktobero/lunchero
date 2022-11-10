@@ -10,18 +10,17 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Set up Python "3.10"
-        uses: actions/setup-python@v2
+      - uses: isbang/compose-action@v1.4.0
         with:
-          python-version: "3.10"
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          services: |
+            backend
+        env: 
+          DB_CONNECTION_URL: sqlite:///./sql_app.db
+          RUNNING_INSIDE_GITHUB_ACTIONS: yes_we_are_running_on_github_actions
       - name: Run migrations
-        run: alembic upgrade head
+        run: docker-compose exec -T backend alembic upgrade head
       - name: Tests with pytest
-        run: PYTHONPATH=. pytest -n 4
+        run: docker-compose exec -T backend pytest -n 4
   lint:
     runs-on: ubuntu-latest
     defaults:

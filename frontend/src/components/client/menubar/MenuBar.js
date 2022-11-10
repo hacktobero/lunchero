@@ -21,7 +21,7 @@ export default function MenuBar() {
 
   return (
 
-    <div className={'flex flex-col p-5 w-3/4 h-2/3 justify-center self-center shadow-xl'}>
+    <div className={'flex flex-col p-5 lg:w-3/4 lg:h-2/3 sm:h-full sm:w-full justify-center self-center shadow-xl'}>
       <div className={'flex w-full h-20 self-center justify-around'}>
         {days.map((day, index) => {
           return (

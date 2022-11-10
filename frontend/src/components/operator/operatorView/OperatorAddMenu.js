@@ -1,7 +1,7 @@
 import Navbar from "../../navbar"
 import { useState } from "react";
 import Tab from "../../client/menubar/Tab";
-import Meal from "../Meal";
+import MealOperator from "../MealOperator";
 import { IoMdAdd } from 'react-icons/io';
 import { IoRemove } from 'react-icons/io5';
 import { IconContext } from 'react-icons';
@@ -29,14 +29,6 @@ const AddMenu = () => {
       }
     return(
         <div className="w-8/10 self-center justify-around p-10 shadow-lg mt-20 rounded-xl">
-              <button onClick={() =>{ 
-                        context.showHandler()
-                        }} className='border rounded-full m-auto my-2 w-12 h-12 duration-150 border-green-500 bg-green-500 text-white flex justify-center items-center font-bold hover:bg-green-600 '>
-                        
-                            <IconContext.Provider value={{ size: '2em' }}>
-                                <IoMdAdd />
-                            </IconContext.Provider>
-              </button>
                 <div className={'flex  h-20'}>
                     {days.map((day, index) => {
                     return (
@@ -44,8 +36,14 @@ const AddMenu = () => {
                         )
                      })}
                  </div>
+                 <button onClick={() =>{ 
+                        context.showHandler()
+                        }} className=' ml-5 mt-4 text-md my-2 w-24 rounded-lg h-12 duration-150  bg-green-400 text-white flex justify-center items-center font-bold hover:bg-green-600 '>
+                        
+                            Add Meal
+                 </button>
                  <div className="">
-                     <Meal meals={meals}></Meal>
+                     <MealOperator meals={meals} />
                  </div>
                  <button  className={'flex p-4 m-auto mt-5 duration-200 font-bold justify-center shadow-sm self-center items-center w-1/6 rounded-2xl text-white bg-green-400 hover:bg-green-500 focus:bg-green-700'}>Confirm</button>
             </div>

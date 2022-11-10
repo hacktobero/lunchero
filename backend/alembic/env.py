@@ -8,7 +8,7 @@ from alembic import context
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
 config = context.config
-
+config.set_main_option('sqlalchemy.url',  os.environ["DB_CONNECTION_URL"])
 # Interpret the config file for Python logging.
 # This line sets up loggers basically.
 fileConfig(config.config_file_name)  # type: ignore
@@ -26,7 +26,7 @@ target_metadata = None
 
 
 def get_url() -> str:
-    return "sqlite:///./sql_app.db"
+    return os.environ["DB_CONNECTION_URL"]
 
 
 def run_migrations_offline():
