@@ -29,12 +29,12 @@ const Operator = () => {
 
 
     return(
-        <div className={"flex flex-col"}>
+        <div className='flex flex-col'>
             <div className="flex">
                 <Navbar></Navbar>
             </div>
 
-            <div className="flex h-8 justify-center">
+            <div className='flex h-8 justify-center'>
                 <button onClick={()=> SetOrdersPush(true)} className={`w-1/6 text-white shadow-lg bg-green-400 rounded-bl-xl ${ordersPush && ' bg-green-800 text-white'}`}>Add menu</button>
                 <button onClick={()=> SetOrdersPush(false)} className={`w-1/6 text-white shadow-lg bg-green-400 rounded-br-xl ${!ordersPush && ' bg-green-800 text-white'}`}>Orders</button>
             </div>

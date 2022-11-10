@@ -10,7 +10,7 @@ export default function Meal(props) {
     const context = useContext(MealsContext)
 
     return (
-        <div className="flex h-auto text-lg justify-between flex-col items-center p-4 font-bold ">
+        <div className='flex h-auto text-lg justify-between flex-col items-center p-4 font-bold '>
             {context.show && <AddMeal></AddMeal>
             }
             <div className={`flex justify-center items-center w-full duration-200  hover:text-green-500 ${context.show ? 'text-green-500' : ''}`}>
@@ -19,7 +19,7 @@ export default function Meal(props) {
 
                 </div>
             </div>
-            <div className={'w-full'}>
+            <div className='w-full'>
                 {context?.data?.menu?.meals?.map((meals) => {
                     return <Dish key={meals.name} name={meals.name} ingredients={meals.ingredients} />
                 })}
