@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { MealsContext } from "../Context/Context";
+import { MealsContext } from "../../Context/Context";
 
 const Navbar = () => {
 

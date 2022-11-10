@@ -1,11 +1,11 @@
-import MealOperator from "../MealOperator";
+import MealOperator from "../meals-section-operator/MealOperator";
 
-const Orders = () => { 
+const OperatorOrders = () => { 
     return(
-        <div className="justify-center w-5/10 m-auto">
+        <div className='justify-center w-5/10 m-auto'>
             <MealOperator />
         </div>
     )
  }
 
- export default Orders
+ export default OperatorOrders

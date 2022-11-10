@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import MealOperator from '../src/components/operator/MealOperator'
+import MealOperator from '../src/components/operator/meals-section-operator/MealOperator'
 import '@testing-library/jest-dom'
 import {MealsContext} from '../src/Context/Context'
 

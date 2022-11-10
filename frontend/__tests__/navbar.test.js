@@ -1,4 +1,4 @@
-import Navbar from "../src/components/navbar";
+import Navbar from "../src/components/shared-components/navbar";
 import { MealsContext } from "../src/Context/Context";
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
