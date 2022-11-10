@@ -3,7 +3,7 @@ import { useContext, useState } from "react"
 import { useRouter } from "next/router";
 import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai';
 
-const Login =  () => {
+const Login = () => {
 
     const [error, setError] = useState(false)
     const [loginEmail, setLoginEmail] = useState('')
@@ -11,10 +11,10 @@ const Login =  () => {
     const [open, setOpen] = useState(false)
 
     const router = useRouter()
-       const toggle = () => { 
+       const toggle = () => {
            setOpen(!open)
         }
-    
+
     return(
         < div className='grid grid-cols-1  sm:grid-cols-1 h-screen w-full'>
             <h1 className="fixed text-green-400 border-b-2 border-black font-bold text-6xl top-5 justify-self-center lg:right-28 lg:top-10">Lunchero</h1>
@@ -27,12 +27,12 @@ const Login =  () => {
                     </div>
                     <div className="flex flex-col text-black py-4 relative">
                         <label className={'font-bold'}>Hasło</label>
-                        <input  className={`rounded-lg text-black bg-gray-300 mt-2 outline-none p-2 border-solid border-2  ${error ? 'border-red-600' : 'border focus:border-gray-300'}`} 
+                        <input role='passwordInput' className={`rounded-lg text-black bg-gray-300 mt-2 outline-none p-2 border-solid border-2  ${error ? 'border-red-600' : 'border focus:border-gray-300'}`}
                         type={(open===false)?'password':'text'}>
                         </input>
                         <div className="absolute right-2 text-xl bottom-7">
 
-                            {(open===false)?<AiFillEye onClick={toggle}/>:<AiFillEyeInvisible onClick={toggle}/>}
+                            {(open===false)?<AiFillEye role='FillEye' onClick={toggle}/>:<AiFillEyeInvisible role='FillEyeInvisible' onClick={toggle}/>}
                         </div>
                     </div>
                     <div className="w-full flex flex-col items-center">
