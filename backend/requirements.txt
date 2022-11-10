@@ -11,3 +11,4 @@ requests
 bcrypt
 pyjwt
 python-multipart
+psycopg2

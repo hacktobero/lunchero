@@ -19,9 +19,9 @@ export default function Meal(props) {
 
                 </div>
             </div>
-            <div className={'w-full'}>
+            <div className='w-full'>
                 {context?.data?.menu?.meals?.map((meals) => {
-                    return<DishOperator key={meals.name} name={meals.name} ingredients={meals.ingredients} />
+                    return <DishOperator key={meals.name} name={meals.name} ingredients={meals.ingredients} />
                 })}
             </div>
         </div>
