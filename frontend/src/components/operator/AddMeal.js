@@ -22,6 +22,7 @@ const AddMeal = () => {
             type: typeRef.current.value
         }
         context.showHandler()
+        console.log(enteredValues);
     }
 
 
