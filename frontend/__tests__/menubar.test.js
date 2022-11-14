@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import MenuBar from '../src/components/client/menubar/MenuBar';
+import MenuBar from '../src/components/client/MenuBar';
 import '@testing-library/jest-dom';
 
 describe('MenuBar component', () => {

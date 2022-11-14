@@ -1,5 +1,5 @@
-import Navbar from "../src/components/navbar";
-import MenuBar from "../src/components/client/menubar/MenuBar";
+import Navbar from "../src/components/shared-components/navbar";
+import MenuBar from "../src/components/client/MenuBar";
 import Meal from '../src/components/client/meals-section/Meal';
 
 

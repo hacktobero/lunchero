@@ -1,6 +1,6 @@
 
 
-export default function Dish ({name, ingredients, role}) {
+export default function DishOperator ({name, ingredients, role}) {
 
 
   return(

@@ -1,15 +1,11 @@
-import Navbar from "../../navbar"
 import { useState } from "react";
-import Tab from "../../client/menubar/Tab";
-import MealOperator from "../MealOperator";
-import { IoMdAdd } from 'react-icons/io';
-import { IoRemove } from 'react-icons/io5';
-import { IconContext } from 'react-icons';
+import Tab from "../../../shared-components/Tab";
+import MealOperator from "../../meals-section-operator/MealOperator";
 import { useContext } from "react";
-import { MealsContext } from "../../../Context/Context";
+import { MealsContext } from "../../../../Context/Context";
 
 
-const AddMenu = () => { 
+const OperatorAddMenu = () => { 
 
     const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
 
@@ -21,15 +17,9 @@ const AddMenu = () => {
         setActiveDay(day);
       }
 
-      const meals = {
-        name: 'essa',
-        ingredients: 'esaas',
-        type:'',
-        preferences:''
-      }
     return(
-        <div className="w-8/10 self-center justify-around p-10 shadow-lg mt-20 rounded-xl">
-                <div className={'flex  h-20'}>
+        <div className='w-8/10 self-center justify-around p-10 shadow-lg mt-20 rounded-xl'>
+                <div className='flex  h-20'>
                     {days.map((day, index) => {
                     return (
                     <Tab key={index} day={day}  active={activeDay} onDayChange={setDayHandler} />
@@ -42,11 +32,11 @@ const AddMenu = () => {
                         
                             Add Meal
                  </button>
-                 <div className="">
-                     <MealOperator meals={meals} />
+                 <div>
+                     <MealOperator />
                  </div>
-                 <button  className={'flex p-4 m-auto mt-5 duration-200 font-bold justify-center shadow-sm self-center items-center w-1/6 rounded-2xl text-white bg-green-400 hover:bg-green-500 focus:bg-green-700'}>Confirm</button>
+                 <button  className='flex p-4 m-auto mt-5 duration-200 font-bold justify-center shadow-sm self-center items-center w-1/6 rounded-2xl text-white bg-green-400 hover:bg-green-500 focus:bg-green-700'>Confirm</button>
             </div>
     )
  }
- export default AddMenu
+ export default OperatorAddMenu

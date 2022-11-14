@@ -1,7 +1,4 @@
 import { useState, useContext } from 'react';
-import { MdArrowDropDown, MdArrowDropUp } from 'react-icons/md';
-import { IconContext } from 'react-icons';
-import Dish from "./Dish";
 import { MealsContext } from '../../../Context/Context';
 import Breakfast from './MealDropdowns/Breakfast';
 import Lunch from './MealDropdowns/Lunch';
@@ -24,17 +21,17 @@ export default function Meal({ children }) {
     return (
         <>
             <div>
-                <div className="flex border-b  h-auto border-b-green-500 text-lg justify-between flex-col items-center p-4 font-bold ">
+                <div className='flex border-b  h-auto border-b-green-500 text-lg justify-between flex-col items-center p-4 font-bold '>
                     <Breakfast meals={breakfastMeals}/>
                 </div>
             </div>
             <div>
-                <div className="flex border-b  h-auto border-b-green-500 text-lg justify-between flex-col items-center p-4 font-bold ">
+                <div className='flex border-b  h-auto border-b-green-500 text-lg justify-between flex-col items-center p-4 font-bold '>
                     <Lunch meals={lunchMeals}/>
                 </div>
             </div>
             <div>
-                <div className="flex border-b  h-auto border-b-green-500 text-lg justify-between flex-col items-center p-4 font-bold ">
+                <div className='flex border-b  h-auto border-b-green-500 text-lg justify-between flex-col items-center p-4 font-bold '>
                     <Extra meals={extraMeals}/>
                 </div>
             </div>
