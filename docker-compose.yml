@@ -11,6 +11,8 @@ services:
       RUNNING_INSIDE_GITHUB_ACTIONS: ${RUNNING_INSIDE_GITHUB_ACTIONS}
       PYTHONPATH: .
     restart: always
+    ports: 
+      - "8000:8000"
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.backend.rule=Host(`lunchero.kcem.pl`) && PathPrefix(`/api`) || Path(`/docs`) || Path(`/openapi.json`)"
@@ -18,7 +20,6 @@ services:
       - "traefik.http.routers.backend.tls.certresolver=letsencrypt"
     depends_on: 
       - postgres
-    network_mode: "host"
     
   postgres:
     image: postgres:15-alpine
@@ -26,9 +27,10 @@ services:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_DB: lunchero_backend
+    ports: 
+      - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
-    network_mode: "host"
 
 volumes:
   postgres_data:
