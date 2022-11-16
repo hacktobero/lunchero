@@ -2,7 +2,7 @@ import React from "react";
 import '@testing-library/react'
 import '@testing-library/jest-dom'
 import {fireEvent, screen, render} from "@testing-library/react";
-import Login from "../pages/login";
+import Login from "../pages/auth/login";
 
 describe('describe login component', () => {
 
