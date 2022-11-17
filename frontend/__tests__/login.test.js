@@ -4,12 +4,12 @@ import '@testing-library/jest-dom'
 import {fireEvent, screen, render} from "@testing-library/react";
 import Login from "../pages/auth/login";
 
-describe('describe login component', () => {
+describe('login component', () => {
 
   test('checking if input type is changing correctly to text', () => {
     render(<Login />)
     const input = screen.getByRole('passwordInput')
-    const eyeButton = screen.getByRole('FillEye')
+    const eyeButton = screen.getByRole('FillEyeInvisible')
     fireEvent.click(eyeButton)
 
 
@@ -27,22 +27,22 @@ describe('describe login component', () => {
 
   test('checking if icon is changing correctly', () => {
     render(<Login />)
-    const eyeButton = screen.getByRole('FillEye')
+    const eyeButton = screen.getByRole('FillEyeInvisible')
     fireEvent.click(eyeButton)
 
 
-    expect(screen.getByRole('FillEyeInvisible')).toBeInTheDocument()
+    expect(screen.getByRole('FillEye')).toBeInTheDocument()
 
   })
 
   test('checking if icon is returning to default', () => {
     render(<Login />)
-    const eyeButton = screen.getByRole('FillEye')
+    const eyeButton = screen.getByRole('FillEyeInvisible')
     fireEvent.click(eyeButton)
-    const fillEyeButton = screen.getByRole('FillEyeInvisible')
+    const fillEyeButton = screen.getByRole('FillEye')
     fireEvent.click(fillEyeButton)
 
-    expect(screen.getByRole('FillEye')).toBeInTheDocument()
+    expect(screen.getByRole('FillEyeInvisible')).toBeInTheDocument()
 
   })
 })
