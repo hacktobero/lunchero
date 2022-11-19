@@ -1,9 +1,9 @@
-import AddMeal from '../operatorView/OperatorAddMenu/AddMeal';
+import AddMeal from '../add-menu-view/AddMeal';
 import { useContext } from 'react';
 import { MealsContext } from '../../../Context/Context';
 import DishOperator from './DishOperator';
 
-export default function MealOperator(props) {
+export default function MealOperator() {
 
     const context = useContext(MealsContext)
 
