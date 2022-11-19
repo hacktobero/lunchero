@@ -1,4 +1,4 @@
-interface User {
+export interface User {
     email: string,
     organisation_id: string,
     id: number
