@@ -1,7 +1,7 @@
 import { User } from "./getUserById";
 
 export async function createUser(email: string, password: string, organisation_id: string) {
-    const res = await fetch('http://localhost:8000/api/users/', {
+    const res = await fetch('http://localhost:8000/api/users', {
         method: 'POST',
         headers: {
             'accept': 'application/json',
@@ -14,7 +14,7 @@ export async function createUser(email: string, password: string, organisation_i
         })
        
     });
-    const data = await res.json();
+    const data: User = await res.json();
 
     return data;
 };

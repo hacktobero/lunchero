@@ -11,7 +11,7 @@ export default function Home() {
   useEffect(() => {
     const asyncFn = async () => {
       try {
-        const res = await getUserById(9);
+        const res = await createUser('email21@gmail.com', '123232323232', '1');
         console.log(res)
       } catch (e) {
         console.log(e.message)
