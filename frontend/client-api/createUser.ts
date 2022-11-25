@@ -10,9 +10,10 @@ export async function createUser(email: string, organisation_id: string, passwor
                 password: password,
             }),
             headers: {'Content-type': 'application/json'},
-            
+
         });
-        return res;
+        const data: User = await res.json()
+        return data;
     } catch (error) {
         return error.message;
     }
