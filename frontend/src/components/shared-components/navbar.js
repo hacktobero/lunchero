@@ -1,5 +1,6 @@
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 import { MealsContext } from "../../Context/Context";
+import { generateToken } from "../../../client-api/generateToken";
 
 const Navbar = () => {
 
@@ -9,7 +10,17 @@ const Navbar = () => {
         photo: 'https://freepikpsd.com/file/2019/10/default-profile-picture-png-1-Transparent-Images.png'
     }];
 
-   
+    useEffect(() => {
+        const asyncFn = async () => {
+          try {
+            const res = await generateToken('test333@test.pl', 'test123456');
+            console.log(res)
+          } catch (e) {
+            console.log(e.message)
+          }
+        };
+        asyncFn();
+      }, []);
 
     return (
 
