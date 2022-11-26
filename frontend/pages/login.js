@@ -11,9 +11,10 @@ const Login = () => {
     const [open, setOpen] = useState(false)
 
     const router = useRouter()
-       const toggle = () => {
-           setOpen(!open)
-        }
+    
+    const toggle = () => {
+        setOpen(!open)
+    }
     // const submitHandler = async (e)=> {
     //   e.preventDefault()
     //   if (error){
