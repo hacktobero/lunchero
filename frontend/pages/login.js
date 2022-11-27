@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { useRouter } from "next/router";
 import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai';
-import {createUser} from "../client-api/createUser";
+import { createUser } from "../client-api/createUser";
 
 const Login = () => {
 
