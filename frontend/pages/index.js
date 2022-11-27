@@ -5,7 +5,15 @@ import Meal from '../src/components/client/meals-section/Meal';
 
 export default function Home() {
 
- 
+  useEffect(() => {
+    const asyncFn = async () => {
+      // const res = await getUserById(1)
+      const res = await createUser("129@email.com", "1", "12345678")
+      console.log(res)
+    };
+    asyncFn();
+  }, []);
+
 
 
   return (

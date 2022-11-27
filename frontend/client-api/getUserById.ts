@@ -5,8 +5,13 @@ export interface User {
 }
 
 export async function getUserById(id: number) {
-    const res = await fetch(`http://localhost:8000/api/users/${id}`);
-    const data: User = await res.json();
+    try {
+        const res = await fetch(`http://localhost:8000/api/users/${id}`);
+        const data: User = await res.json();
 
-    return data;
+        return data;
+    } catch (e) {
+        console.log(e.message)
+    }
+
 }
