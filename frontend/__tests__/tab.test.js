@@ -17,17 +17,17 @@ describe('Tab Component', () => {
         expect(active).toBe('Tuesday');
     });
 
-    test('render correctly active class name', () => {
-        let className = 'flex duration-200 text-white font-bold justify-center shadow-sm self-center items-center w-1/5 rounded-t-2xl rounded-b-sm h-full bg-green-700 hover:bg-green-700 border border-gray text-2xl';
+    test('render correctly when active class name', () => {
+
         render(<Tab key={1} day={'Monday'} active={'Monday'} onDayChange={() => { }} />);
         const tabElement = screen.getByText('Monday');
-        expect(tabElement).toHaveAttribute('class', className)
+        expect(tabElement).toHaveClass('bg-green-700 hover:bg-green-700 border border-gray md:text-2xl sm:text-xl')
     });
-    
-    test('render correctly active class name', () => {
-        let className = 'flex cursor-pointer  duration-200 text-white font-bold justify-center shadow-sm self-center items-center w-1/5 hover:bg-green-700  rounded-t-2xl  h-full bg-green-700';
+
+    test('render correctly when not active class name', () => {
+
         render(<Tab key={1} day={'Monday'} active={'Friday'} onDayChange={() => { }} />);
         const tabElement = screen.getByText('Monday');
-        expect(tabElement).not.toHaveAttribute('class', className)
+      expect(tabElement).toHaveClass('bg-green-400 border md:text-xl sm:text-lg')
     });
 })

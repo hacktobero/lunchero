@@ -1,5 +1,5 @@
 import { render, screen} from '@testing-library/react'
-import DishOperator from '../src/components/operator/meals-section-operator/DishOperator'
+import DishOperator from '../src/components/operator/shared-operator/DishOperator'
 import '@testing-library/jest-dom'
 
 describe('DishOperator component', () => {
