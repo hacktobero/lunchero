@@ -2,11 +2,12 @@ import { useEffect, useState } from "react";
 import Navbar from "../src/components/shared-components/navbar";
 import MenuBar from "../src/components/client/MenuBar";
 import { createUser } from "../client-api/createUser";
+import { generateToken } from "../client-api/generateToken";
 export default function Home() {
 
   useEffect(() => {
     const asyncFn = async () => {
-      const res = await createUser('123456@gmail.com', '123456789');
+      const res = await generateToken('string1234@string.pl', 'string1223');
       console.log(res);
     };
     asyncFn();

@@ -19,7 +19,7 @@ export async function generateToken(username: string, password: string) {
                 'accept': 'application/json'
             }
         });
-       const data = await res.json();
+       const data: Token = await res.json();
        return data;
     } catch (error) {
         return error.message
