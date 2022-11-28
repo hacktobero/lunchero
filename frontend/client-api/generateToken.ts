@@ -1,3 +1,8 @@
+interface Token {
+  access_token: string,
+  token_type: string
+}
+
 export async function generateToken(username: string, password: string) {
     try {
         const res = await fetch('http:localhost:8000/api/token', {
@@ -37,8 +42,8 @@ export async function generateToken(username: string, password: string) {
             'accept': 'application/json'
           }
         });
-        const data = await res.json();
-        return data
+        const token: Token = await res.json();
+        return token
       } catch (error: any) {
         return error.message
       }
