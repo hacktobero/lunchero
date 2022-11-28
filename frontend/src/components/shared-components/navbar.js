@@ -1,5 +1,6 @@
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 import { MealsContext } from "../../Context/Context";
+import { generateToken } from "../../../client-api/generateToken";
 
 const Navbar = () => {
 
@@ -8,6 +9,8 @@ const Navbar = () => {
     const profilePhoto = [{
         photo: 'https://freepikpsd.com/file/2019/10/default-profile-picture-png-1-Transparent-Images.png'
     }];
+
+   
 
     return (
         <div className="w-full flex justify-between shadow-lg lg:h-32 sm:h-28">
