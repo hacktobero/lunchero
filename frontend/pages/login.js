@@ -15,10 +15,6 @@ const Login = () => {
         setOpen(!open)
     }
 
-    
-    const toggle = () => {
-        setOpen(!open)
-    }
     // const submitHandler = async (e)=> {
     //   e.preventDefault()
     //   if (error){

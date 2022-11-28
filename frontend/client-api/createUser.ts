@@ -1,18 +1,17 @@
-import { User } from "./getUserById";
-
-export async function createUser(email: string, organisation_id: string, password: string) {
+export async function createUser(email: string, password: string) {
     try {
-        const res = await fetch('http://localhost:8000/api/users/', {
+        const requestOptions = {
             method: "POST",
-            headers: { "Content-type": "application/json"},
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-                email: email,
-                organisation_id: organisation_id,
-                password: password,
-            })
-        });
-        const data: User = await res.json()
-        return data;
+              email: email,
+              password: password,
+              organisation_id: 1
+            }),
+        };
+        const response = await fetch('http://localhost:8000/api/users', requestOptions );
+        const user = await response.json();
+        return user;
     } catch (error) {
         return error.message;
     }
