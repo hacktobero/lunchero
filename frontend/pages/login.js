@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { useRouter } from "next/router";
 import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai';
-import { createUser } from "../client-api/createUser";
+import { generateToken } from "../client-api/generateToken";
 
 const Login = () => {
 
@@ -15,17 +15,8 @@ const Login = () => {
     const toggle = () => {
         setOpen(!open)
     }
-    // const submitHandler = async (e)=> {
-    //   e.preventDefault()
-    //   if (error){
-    //     return ;
-    //   }
-    //   /* piece for register component */
-    //   // const res = await createUser(loginEmail, "1", loginPassword)
-    //   // console.log(res)
-    // }
     return(
-        < div className='grid grid-cols-1  sm:grid-cols-1 h-screen w-full'>
+        <div className='grid grid-cols-1  sm:grid-cols-1 h-screen w-full'>
             <h1 className="fixed text-green-400 border-b-2 border-black font-bold text-6xl top-5 justify-self-center lg:right-28 lg:top-10">Lunchero</h1>
             <div className=" flex flex-col  justify-center">
                 <form onSubmit={submitHandler} className="xxl:w-96 xxl:h-144  md:max-w-sm sm:max-w-xs drop-shadow-2xl mx-auto bg-white border-green-500 solid border-2 p-20 sm:p-14 px-20 rounded-lg">

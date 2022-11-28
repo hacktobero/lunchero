@@ -1,14 +1,14 @@
-import  Axios  from "axios";
-
+import { User } from "./getUserById";
 export async function getUserByToken(token: string) {
     try {
-        const userInfo = await Axios.get('http://localhost:8000/api/users/me', {
+        const res = await fetch('http://localhost:8000/api/users/me', {
+            method: 'GET',
             headers: {
-                accept: 'application/json',
-                Authorization: `Bearer ${token}`,
+                Authorization: `Bearer ${token}`
             }
-        })
-        return userInfo;
+        });
+        const userInfo: User = await res.json();
+        return userInfo
     } catch (error) {
         return error.message
     }
