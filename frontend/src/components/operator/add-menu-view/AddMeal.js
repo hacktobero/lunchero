@@ -1,6 +1,6 @@
 import { FaRegTimesCircle } from 'react-icons/fa'
 import { useContext, useRef} from 'react'
-import { MealsContext } from '../../../../Context/Context'
+import { MealsContext } from '../../../Context/Context'
 import { IconContext } from "react-icons";
 
 const AddMeal = () => {
@@ -43,11 +43,11 @@ const AddMeal = () => {
                     <form className='grid lg:grid-cols-2 grid-cols-1 lg:gap-8'>
                         <div className='grid lg:col-span-1  col-span-2 w-2/3'>
                             <label className='font-bold'>Meal name</label>
-                            <input ref={mealNameRef} className='rounded-lg flex-col text-black bg-gray-300 mt-2  outline-none p-2 shadow-xl   focus:border-gray-300' ></input>
+                            <input ref={mealNameRef} className='rounded-lg flex-col text-black bg-gray-300 mt-2 outline-none p-2 shadow-xl focus:border-gray-300'></input>
                         </div>
-                        <div className='grid w-1/4 col-span-1 lg:ml-20'>
+                        <div className='grid md:w-1/4 sm:w-full col-span-1 lg:ml-20'>
                             <label className='font-bold'>Preferences</label>
-                            <select ref={preferencesRef} required className='flex-col rounded-lg text-black bg-gray-300 mt-2  outline-none p-2    shadow-xl focus:border-gray-300'>
+                            <select ref={preferencesRef} required className='flex-col rounded-lg text-black bg-gray-300 mt-2 outline-none p-2 shadow-xl focus:border-gray-300'>
                                 <option value=''></option>
                                 <option value='Meat'>Meat</option>
                                 <option value='Vege'>Vege</option>
@@ -70,7 +70,7 @@ const AddMeal = () => {
                             </div>
 
                             <div className='mt-8 w-2/4 h-full'>
-                                <button onClick={handleSubmit} className='w-full drop-shadow-xl p-2 m-auto content-center text-2xl text-white  bg-green-500 rounded-lg hover:bg-green-600'>Add</button>
+                                <button onClick={handleSubmit} className='w-full drop-shadow-xl p-2 m-auto content-center md:text-2xl text-white  bg-green-500 rounded-lg hover:bg-green-600'>Add</button>
                             </div>
                         </div>
                     </form>

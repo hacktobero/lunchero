@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import MealOperator from '../src/components/operator/meals-section-operator/MealOperator'
+import MealOperator from '../src/components/operator/shared-operator/MealOperator'
 import '@testing-library/jest-dom'
 import {MealsContext} from '../src/Context/Context'
 
@@ -14,14 +14,14 @@ describe('MealOperator component', () => {
                                 id: 54,
                                 type: "Breakfast",
                                 ingredients: "Steak, Fries",
-                                tag: "Meat"        
+                                tag: "Meat"
                             },
                             {
                                 name: "Salad with tofu",
                                 id: 52,
                                 type: "Breakfast",
                                 ingredients: "Salad, Tofu, Tomato, Vinegar sauce",
-                                tag: "Vegan"        
+                                tag: "Vegan"
                             }
                         ]
                     }
