@@ -46,8 +46,8 @@ const Login = () => {
                             {(open!==false)?<AiFillEye role='FillEye' onClick={toggle}/>:<AiFillEyeInvisible role='FillEyeInvisible' onClick={toggle}/>}
                         </div>
                     </div>
-                    <h1 className="cursor-pointer text-sm text-center hover:drop-shadow-md ">Reset password</h1>
-                    <h1 onClick={async() => {router.push('/auth/register')}} className="cursor-pointer text-sm text-center hover:drop-shadow-md mt-4">Register</h1>
+                    <h1 className="cursor-pointer text-sm text-center text-green-800 hover:drop-shadow-md ">Reset password</h1>
+                    <h1 onClick={async() => {router.push('/auth/register')}} className="cursor-pointer text-green-800 text-sm text-center hover:drop-shadow-md mt-4">I don't have an account yet</h1>
                     <div className='w-full flex flex-col items-center'>
                       <button className='w-1/2 justify-center font-bold text-lg drop-shadow-xl m-auto content-center text-white xxl:mt-14 mt-6 py-3 bg-green-500 rounded-lg hover:bg-green-600 focus:bg-green-700'>Log in</button>
                     </div>
