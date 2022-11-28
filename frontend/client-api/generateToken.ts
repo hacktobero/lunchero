@@ -5,7 +5,7 @@ interface Token {
 
 export async function generateToken(username: string, password: string) {
     try {
-        const res = await fetch('http:localhost:8000/api/token', {
+        const res = await fetch('http://localhost:8000/api/token', {
             method: 'POST',
             body: new URLSearchParams({
                 grant_type: '',

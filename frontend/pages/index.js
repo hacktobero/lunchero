@@ -3,11 +3,27 @@ import Navbar from "../src/components/shared-components/navbar";
 import MenuBar from "../src/components/client/MenuBar";
 import { createUser } from "../client-api/createUser";
 import { generateToken } from "../client-api/generateToken";
-export default function Home() {
+import { getUserByToken } from '../client-api/getUserByToken';
+import { deleteUser } from '../client-api/deleteUser';
+import { updateUserEmail } from '../client-api/updateUserEmail';
+export async function getServerSideProps() {
+  const response = await updateUserEmail('test333@test333.pl', 'haslohaslo12');
+
+  return {
+    props: {
+      response
+    }
+  }
+}
+
+
+export default function Home({ response }) {
+
+  console.log(response)
 
   useEffect(() => {
     const asyncFn = async () => {
-      const res = await generateToken('string1234@string.pl', 'string1223');
+      const res = await updateUserEmail(19, 'test4445@test444.pl' ,response.access_token);
       console.log(res);
     };
     asyncFn();
