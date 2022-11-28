@@ -15,6 +15,19 @@ const Login = () => {
         setOpen(!open)
     }
 
+    
+    const toggle = () => {
+        setOpen(!open)
+    }
+    // const submitHandler = async (e)=> {
+    //   e.preventDefault()
+    //   if (error){
+    //     return ;
+    //   }
+    //   /* piece for register component */
+    //   // const res = await createUser(loginEmail, "1", loginPassword)
+    //   // console.log(res)
+    // }
     return(
         < div className='grid grid-cols-1  sm:grid-cols-1 h-screen w-full'>
             <h1 className="fixed text-green-400 border-b-2 border-black font-bold text-6xl top-5 justify-self-center lg:right-28 lg:top-10">Lunchero</h1>
