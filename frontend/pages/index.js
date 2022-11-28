@@ -12,7 +12,7 @@ export default function Home() {
     };
     asyncFn();
   }, []);
-
+  
   return (
     <div className={'flex w-full h-screen items-center justify-start flex-col'}>
       <Navbar/>
