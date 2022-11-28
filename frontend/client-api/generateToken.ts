@@ -19,7 +19,7 @@ export async function generateToken(username: string, password: string) {
                 "Content-Type": "application/x-www-form-urlencoded"
             }
         });
-       const data = await res.json();
+       const data: Token = await res.json();
        return data;
     } catch (error) {
         return error.message
