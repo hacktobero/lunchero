@@ -2,10 +2,6 @@ import re
 
 import fastapi
 import fastapi.security as security
-from fastapi import Depends, FastAPI, HTTPException
-from fastapi.middleware.cors import CORSMiddleware
-from sqlalchemy.orm import Session
-
 import models.base as base
 import models.meal_model
 import models.menu_model
@@ -16,11 +12,14 @@ import models.user_model
 import schemas.user_schema as user_schema
 import services.user_service as user_service
 import utils.authentication_utils as authentication_utils
+from fastapi import Depends, FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
+from sqlalchemy.orm import Session
 from utils.database_utils import get_db
 
 app = FastAPI()
 
-origins = ["http://127.0.0.1:8000", "http://localhost:8000"]
+origins = ["http://127.0.0.1:8000", "http://localhost:8000", "http://localhost:3000", "http://127.0.0.1:3000"]
 
 app.add_middleware(
     CORSMiddleware,
