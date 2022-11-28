@@ -1,6 +1,6 @@
 export interface User {
     email: string,
-    organisation_id: string,
+    organisation_id: number,
     id: number
 }
 
