@@ -1,11 +1,15 @@
+import React from "react";
 import '@testing-library/react'
 import '@testing-library/jest-dom'
 import {fireEvent, screen, render} from "@testing-library/react";
-import Register from "../pages/auth/register";
+import Register from '../pages/register'
+import {AuthContext} from '../src/Context/AuthContext'
 
 describe('register component',() =>{
     test('error border test',() => {
-        render(<Register />)
+        const setToken = (token) => {return}
+        console.log(typeof setToken);
+        render(<AuthContext.Provider value={[setToken]}><Register /></AuthContext.Provider>)
         const passwordInput = screen.getByRole('passwordInput')
         const repeatPasswordInput = screen.getByRole('repeatPasswordInput')
         const button = screen.getByRole('button')
@@ -15,7 +19,8 @@ describe('register component',() =>{
         expect(passwordInput).toHaveClass('border-red-600')
     })
     test('recive object', () => {
-        render(<Register />)
+        const setToken = jest.fn()
+        render(<AuthContext.Provider value={[setToken]}><Register /></AuthContext.Provider>)
         const passwordInput = screen.getByRole('passwordInput')
         const repeatPasswordInput = screen.getByRole('repeatPasswordInput')
         const emailInput = screen.getByRole('emailInput')

@@ -3,13 +3,13 @@ interface Token {
   token_type: string
 }
 
-export async function generateToken(username: string, password: string) {
+export async function generateToken(email: string, password: string) {
     try {
         const res = await fetch('http://localhost:8000/api/token', {
             method: 'POST',
             body: new URLSearchParams({
                 grant_type: '',
-                username: username,
+                username: email,
                 password: password,
                 scope: '',
                 client_id: '',
@@ -20,7 +20,7 @@ export async function generateToken(username: string, password: string) {
             }
         });
        const data: Token = await res.json();
-       return data;
+       return data.access_token;
     } catch (error) {
         return error.message
     }
