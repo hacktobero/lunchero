@@ -40,8 +40,8 @@ const Register = () => {
       setToken(token)
       localStorage.setItem('luncheroToken', token)
       router.push('/client')
-    } catch (e){
-      console.log(e)
+    } catch (error){
+      console.log(error.message)
     }
 
   }
