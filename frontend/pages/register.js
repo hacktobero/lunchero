@@ -5,7 +5,7 @@ import { generateToken } from "../client-api/generateToken";
 import { AuthContext } from "../src/Context/AuthContext";
 
 const Register = () => {
-  
+
   const router = useRouter()
   const [, setToken] = useContext(AuthContext);
 
@@ -15,30 +15,35 @@ const Register = () => {
   const emailRef = useRef()
   const passwordRef = useRef()
   const reapeatPasswordRef = useRef()
-  
 
-  const submitHandler = async (e) => { 
+
+  const submitHandler = async (e) => {
     e.preventDefault()
-    const authRegisterValues = {
+    try {
+      const authRegisterValues = {
         email: emailRef.current.value,
         password: passwordRef.current.value,
         repeatPassword: reapeatPasswordRef.current.value
+      }
+      if(error === true){
+        return
+      }
+      if(authRegisterValues.password.length<8){
+        setLengthPasswordError(true)
+        return
+      }
+      const response = await createUser(authRegisterValues.email, authRegisterValues.password)
+      if (!response){
+        return
+      }
+      const token = await generateToken(authRegisterValues.email, authRegisterValues.password)
+      setToken(token)
+      localStorage.setItem('luncheroToken', token)
+      router.push('/client')
+    } catch (e){
+      console.log(e)
     }
-    if(error === true){
-      return
-    }
-    if(authRegisterValues.password.length<8){
-      setLengthPasswordError(true)
-      return
-    }
-    const response = await createUser(authRegisterValues.email, authRegisterValues.password)
-    if (!response){
-      return
-    }
-    const token = await generateToken(authRegisterValues.email, authRegisterValues.password)
-    setToken(token)
-    localStorage.setItem('luncheroToken', token)
-    router.push('/client')
+
   }
 
   const passwordCheck= () => {
@@ -77,8 +82,8 @@ const Register = () => {
                 <span className={`bg-white text-sm text-black text-opacity-80 absolute top-3 left-2 px-1 transition duration-200 input-password`}>Repeat password</span>
             </label>
           </div>
-          <p onClick={async () => { await router.push('/') }} className="cursor-pointer font-bold text-sm text-green-800 text-center mt-3 hover:drop-shadow-md">I already have an account</p>
-          <div className="w-full flex flex-col items-center">
+          <p onClick={async () => { router.push('/ ') }} className="cursor-pointer font-bold text-sm text-green-800 text-center mt-3 hover:drop-shadow-md">I already have an account</p>
+          <div className='w-full flex flex-col items-center'>
             <button role='button' onClick={passwordCheck} type='submit' className="w-1/2 justify-center drop-shadow-xl m-auto content-center text-white mt-5  py-3 bg-green-500 rounded-lg hover:bg-green-600 focus:bg-green-700">Zarejestruj</button>
           </div>
         </form>

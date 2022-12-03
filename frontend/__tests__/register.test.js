@@ -4,13 +4,13 @@ import '@testing-library/jest-dom'
 import {fireEvent, screen, render} from "@testing-library/react";
 import Register from '../pages/register'
 import {AuthContext} from '../src/Context/AuthContext'
-import { useRouter } from "next/router"
+
 
 describe('register component',() =>{
     test('error border test',async () => {
-        const setToken = () => {return}
-        const push = async() => { await console.log('essa'); return }
-        render(<AuthContext.Provider value={[,setToken]}><Register value={push}/></AuthContext.Provider>)
+        const setToken = (token) => {return}
+
+        render(<AuthContext.Provider value={[,setToken]}><Register /></AuthContext.Provider>)
         const passwordInput = screen.getByRole('passwordInput')
         const repeatPasswordInput = screen.getByRole('repeatPasswordInput')
         const button = screen.getByRole('button')
@@ -20,9 +20,8 @@ describe('register component',() =>{
         expect(passwordInput).toHaveClass('border-red-600')
     })
     test('recive object',async () => {
-        const setToken = () => {return}
-        const push = async() => { await console.log('essa'); return }
-        render(<AuthContext.Provider value={[,setToken]}><Register value={push}/></AuthContext.Provider>)
+        const setToken = (token) => {return}
+        render(<AuthContext.Provider value={[,setToken]}><Register /></AuthContext.Provider>)
         const passwordInput = screen.getByRole('passwordInput')
         const repeatPasswordInput = screen.getByRole('repeatPasswordInput')
         const emailInput = screen.getByRole('emailInput')
