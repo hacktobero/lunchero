@@ -1,10 +1,6 @@
-describe('Navigation', () => {
-    it('Root contains weekdays from Monday to Friday', () => {
+describe('Log in', () => {
+    it('Log in contains title', () => {
         cy.visit('http://localhost:3000/')
-        cy.get('div').contains('Monday')
-        cy.get('div').contains('Tuesday')
-        cy.get('div').contains('Wednesday')
-        cy.get('div').contains('Thursday')
-        cy.get('div').contains('Friday')
+        cy.get('h2').contains('Log In')
     })
 })
