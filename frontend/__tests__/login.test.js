@@ -9,7 +9,6 @@ describe('login component', () => {
 
   test('checking if input type is changing correctly to text', () => {
     const setToken = (token) => {return}
-    console.log(typeof setToken);
     render(<AuthContext.Provider value={[setToken]}><Login /></AuthContext.Provider>)
     const input = screen.getByRole('passwordInput')
     const eyeButton = screen.getByRole('FillEyeInvisible')

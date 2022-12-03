@@ -1,15 +1,16 @@
-import { AuthContext } from "../src/Context/AuthContext";
 import { useState, useRef, useContext } from "react"
 import { useRouter } from "next/router";
 import  { createUser }  from "../client-api/createUser";
 import { generateToken } from "../client-api/generateToken";
+import { AuthContext } from "../src/Context/AuthContext";
 
 const Register = () => {
-
+  
   const router = useRouter()
+  const [, setToken] = useContext(AuthContext);
 
   const [error, setError] = useState(false);
-  const [, setToken] = useContext(AuthContext);
+  const [lengthPasswordError, setLengthPasswordError] = useState(false)
 
   const emailRef = useRef()
   const passwordRef = useRef()
@@ -24,6 +25,10 @@ const Register = () => {
         repeatPassword: reapeatPasswordRef.current.value
     }
     if(error === true){
+      return
+    }
+    if(authRegisterValues.password.length<8){
+      setLengthPasswordError(true)
       return
     }
     const response = await createUser(authRegisterValues.email, authRegisterValues.password)
@@ -59,13 +64,14 @@ const Register = () => {
                 <span className='bg-white text-sm text-black text-opacity-80 absolute top-3 left-2 px-1 transition duration-200 input-text'>Email</span>
             </label>
           </div>
-          <div className="flex flex-col  text-black py-8">
+          <div className="flex flex-col  text-black pt-5 pb-3">
             <label className='relative'>
                 <input ref={passwordRef} role='passwordInput' type="password" placeholder="Input" className={`${error ? 'border-red-600' : 'focus:border-green-500'} px-4 p-2 w-60 text-sm text-black border-2 rounded-lg border-opacity-50 outline-none focus:border-green-500 placeholder-gray-300 placeholder-opacity-0 transition duration-200`} />
                 <span className='bg-white text-sm text-black text-opacity-80 absolute top-3 left-2 px-1 transition duration-200 input-password'>Password</span>
             </label>
           </div>
-          <div className="flex flex-col  text-black py-5">
+          <p className={`text-xs text-white block text-center ${lengthPasswordError===true ? 'text-red-600' : 'text-white'}`}>Password must be at least 8 letters long</p>
+          <div className="flex flex-col  text-black py-3">
             <label className='relative'>
                 <input ref={reapeatPasswordRef} role='repeatPasswordInput' type="password" placeholder="Input" className={`${error ? 'border-red-600' : 'focus:border-green-500'} w-60 px-4 p-2 text-sm text-black border-2 rounded-lg border-opacity-50 outline-none focus:border-green-500 placeholder-gray-300 placeholder-opacity-0 transition duration-200`} />
                 <span className={`bg-white text-sm text-black text-opacity-80 absolute top-3 left-2 px-1 transition duration-200 input-password`}>Repeat password</span>
