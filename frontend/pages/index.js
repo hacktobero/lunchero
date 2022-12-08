@@ -37,7 +37,6 @@ const Login = () => {
 
     return(
         < div className='grid grid-cols-1 text-lg  sm:grid-cols-1 h-screen w-full'>
-           <h1 className='fixed text-green-400 border-b-2 border-black font-bold lg:text-6xl sm:text-3xl top-5 justify-self-center lg:right-28 lg:top-10'>Lunchero</h1>
             <div className=' flex flex-col  justify-center'>
                 <form onSubmit={submitHandler} className='xxl:w-96 xxl:h-144  md:max-w-sm font-bold sm:max-w-xs drop-shadow-2xl mx-auto bg-white border-green-500 solid border-2 sm:p-10 rounded-lg'>
                     <h2 className='text-black text-center text-4xl pb-14'>Log In</h2>
@@ -56,7 +55,6 @@ const Login = () => {
                             {(open!==false)?<AiFillEye role='FillEye' onClick={toggle}/>:<AiFillEyeInvisible role='FillEyeInvisible' onClick={toggle}/>}
                         </div>
                     </div>
-                    <h1 className="cursor-pointer text-sm text-center text-green-800 hover:drop-shadow-md ">Reset password</h1>
                     <h1 onClick={async() => {router.push('/register')}} className="cursor-pointer text-green-800 text-sm text-center hover:drop-shadow-md mt-4">I don't have an account yet</h1>
                     <div className='w-full flex flex-col items-center'>
                       <button className='w-1/2 justify-center font-bold text-lg drop-shadow-xl m-auto content-center text-white xxl:mt-14 mt-6 py-3 bg-green-500 rounded-lg hover:bg-green-600 focus:bg-green-700'>Log in</button>
