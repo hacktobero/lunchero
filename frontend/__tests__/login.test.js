@@ -2,12 +2,14 @@ import React from "react";
 import '@testing-library/react'
 import '@testing-library/jest-dom'
 import {fireEvent, screen, render} from "@testing-library/react";
-import Login from "../pages/auth/login";
+import Login from '../pages/index'
+import {AuthContext} from '../src/Context/AuthContext'
 
 describe('login component', () => {
 
   test('checking if input type is changing correctly to text', () => {
-    render(<Login />)
+    const setToken = (token) => {return}
+    render(<AuthContext.Provider value={[setToken]}><Login /></AuthContext.Provider>)
     const input = screen.getByRole('passwordInput')
     const eyeButton = screen.getByRole('FillEyeInvisible')
     fireEvent.click(eyeButton)
@@ -18,7 +20,8 @@ describe('login component', () => {
   })
 
   test('checking if input is have password type by default', () => {
-    render(<Login />)
+    const setToken = jest.fn()
+    render(<AuthContext.Provider value={[setToken]}><Login /></AuthContext.Provider>)
     const input = screen.getByRole('passwordInput')
 
     expect(input).toHaveAttribute('type', 'password')
@@ -26,7 +29,8 @@ describe('login component', () => {
   })
 
   test('checking if icon is changing correctly', () => {
-    render(<Login />)
+    const setToken = jest.fn()
+    render(<AuthContext.Provider value={[setToken]}><Login /></AuthContext.Provider>)
     const eyeButton = screen.getByRole('FillEyeInvisible')
     fireEvent.click(eyeButton)
 
@@ -36,7 +40,8 @@ describe('login component', () => {
   })
 
   test('checking if icon is returning to default', () => {
-    render(<Login />)
+    const setToken = jest.fn()
+    render(<AuthContext.Provider value={[setToken]}><Login /></AuthContext.Provider>)
     const eyeButton = screen.getByRole('FillEyeInvisible')
     fireEvent.click(eyeButton)
     const fillEyeButton = screen.getByRole('FillEye')
