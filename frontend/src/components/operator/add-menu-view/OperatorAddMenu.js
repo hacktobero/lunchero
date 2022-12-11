@@ -19,7 +19,7 @@ const OperatorAddMenu = () => {
       }
 
     return(
-      <div className='flex flex-col p-5 lg:w-3/4 lg:h-2/3 sm:h-full sm:w-5/6 justify-start self-center shadow-xl'>
+      <div className='flex flex-col p-5 md:w-3/4 md:h-5/6 sm:h-full sm:w-5/6 justify-start self-center shadow-xl'>
         <div className='md:flex sm:hidden w-full h-20 self-center justify-around'>
           {days.map((day, index) => {
             return (
