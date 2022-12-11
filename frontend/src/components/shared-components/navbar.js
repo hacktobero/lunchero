@@ -18,10 +18,10 @@ const Navbar = () => {
     })
     console.log(email);
 
-   
+
 
     return (
-        <div className="w-full flex justify-between shadow-lg lg:h-32 sm:h-28">
+        <div className="w-full h-full flex justify-between shadow-lg">
             <div className='flex h-full md:mx-16 sm:mx-4 p-2 rounded flex-col justify-around cursor-pointer ease-in-out duration-150 '>
             <IconContext.Provider value={{ size: '3rem' }}>
                 <CgProfile  className="shadow-lg flex self-center rounded-full "></CgProfile>
