@@ -12,10 +12,6 @@ export default function MealOperator() {
             {context.show && <AddMeal />
             }
             <div className={`flex justify-center items-center w-full duration-200  hover:text-green-500 ${context.show ? 'text-green-500' : ''}`}>
-                <h1></h1>
-                <div>
-
-                </div>
             </div>
             <div className='w-full'>
                 {context?.data?.menu?.meals?.map((meals) => {

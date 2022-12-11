@@ -1,22 +1,32 @@
-import { useContext, useEffect } from "react"
+import { useContext, useEffect, useState } from "react"
 import { MealsContext } from "../../Context/Context";
-import { generateToken } from "../../../client-api/generateToken";
+import {CgProfile} from 'react-icons/cg'
+import { IconContext } from 'react-icons/lib';
+import { AuthContext } from "../../Context/AuthContext";
+import { getUserByToken } from "../../../client-api/getUserByToken";
+
 
 const Navbar = () => {
 
     const context = useContext(MealsContext);
+    const [token] = useContext(AuthContext)
+    const [email, setEmail] = useState('')
 
-    const profilePhoto = [{
-        photo: 'https://freepikpsd.com/file/2019/10/default-profile-picture-png-1-Transparent-Images.png'
-    }];
+    useEffect(() => {
+        getUserByToken(token)
+        .then((user) => setEmail(user.email))
+    })
+    console.log(email);
 
-   
+
 
     return (
-        <div className="w-full flex justify-between shadow-lg lg:h-32 sm:h-28">
+        <div className="w-full h-full flex justify-between shadow-lg">
             <div className='flex h-full md:mx-16 sm:mx-4 p-2 rounded flex-col justify-around cursor-pointer ease-in-out duration-150 '>
-                <img className="shadow-lg h-2/3 flex self-center rounded-full " src={profilePhoto[0].photo}></img>
-                <h2 data-testid='username' className='w-1/3 lg:text-xl sm:text-lg text-center'>{`${context?.data?.user ? `${context?.data?.user?.username}` : 'Loading...'}`}</h2>
+            <IconContext.Provider value={{ size: '3rem' }}>
+                <CgProfile role='userIcon' className="shadow-lg flex self-center rounded-full "></CgProfile>
+            </IconContext.Provider>
+                <h2 role='email' className='w-1/3 lg:text-xl sm:text-xs text-center'>{email}</h2>
             </div>
             <div className='lg:text-5xl sm:text-4xl w-fit md:mx-16 sm:mx-4 flex justify-end items-center text-green-400 font-bold'>
                 Lunchero
