@@ -27,7 +27,8 @@ export default function AuthContextProvider ({children}) {
               console.log("No token found in localStorage");
               if (
                 router.pathname == "/client" ||
-                router.pathname == "/register"
+                router.pathname == "/register" ||
+                router.pathname == '/operator'
               ) {
                 router.push("/");
               }
