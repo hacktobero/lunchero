@@ -24,9 +24,9 @@ const Navbar = () => {
         <div className="w-full h-full flex justify-between shadow-lg">
             <div className='flex h-full md:mx-16 sm:mx-4 p-2 rounded flex-col justify-around cursor-pointer ease-in-out duration-150 '>
             <IconContext.Provider value={{ size: '3rem' }}>
-                <CgProfile  className="shadow-lg flex self-center rounded-full "></CgProfile>
+                <CgProfile role='userIcon' className="shadow-lg flex self-center rounded-full "></CgProfile>
             </IconContext.Provider>
-                <h2 data-testid='username' className='w-1/3 lg:text-xl sm:text-xs text-center'>{email}</h2>
+                <h2 role='email' className='w-1/3 lg:text-xl sm:text-xs text-center'>{email}</h2>
             </div>
             <div className='lg:text-5xl sm:text-4xl w-fit md:mx-16 sm:mx-4 flex justify-end items-center text-green-400 font-bold'>
                 Lunchero
