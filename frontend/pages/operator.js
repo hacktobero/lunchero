@@ -22,7 +22,7 @@ const Operator = () => {
         <div className='flex flex-col w-full h-screen items-center'>
           <Navbar />
 
-          <div className='flex md:h-8 sm:h-12 md:w-1/3 sm:w-2/3 justify-center mb-2'>
+          <div className='flex lg:h-14 sm:h-12 md:w-1/3 sm:w-2/3 justify-center mb-2'>
             <button onClick={()=> SetOrdersPush(true)} className={`w-1/2 text-white shadow-lg bg-green-400 rounded-bl-xl ${ordersPush && ' bg-green-800 text-white'}`}>Add menu</button>
             <button onClick={()=> SetOrdersPush(false)} className={`w-1/2 text-white shadow-lg bg-green-400 rounded-br-xl ${!ordersPush && ' bg-green-800 text-white'}`}>Orders</button>
           </div>

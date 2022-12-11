@@ -34,9 +34,19 @@ const Register = () => {
         setLengthPasswordError(true)
         return
       }
-      if(!checkBox){
-        return
-      }
+      
+      if (passwordRef.current.value !== reapeatPasswordRef.current.value) {
+          setError(true)
+          return
+        }else{
+            setError(false)
+        }
+      
+      if(checkBox===false){
+          setCheckBoxColor(true)
+          return
+        }
+  
       const response = await createUser(authRegisterValues.email, authRegisterValues.password)
       if (!response){
         return
@@ -50,21 +60,6 @@ const Register = () => {
     } 
 
   }
-
-  const passwordCheck = () => {
-    if (passwordRef.current.value !== reapeatPasswordRef.current.value) {
-      setError(true)
-    }
-    else{
-        setError(false)
-    }
-  }
-  const dataAcceptCheck = () => {
-      if(checkBox===false){
-        setCheckBoxColor(true)
-      }
-     }
-     console.log(checkBox);
 
  
 
@@ -99,7 +94,7 @@ const Register = () => {
           </div>
           <p onClick={async () => { router.push('/ ') }} className="cursor-pointer font-bold text-sm text-green-800 text-center mt-3 hover:drop-shadow-md">I already have an account</p>
           <div className='w-full flex flex-col items-center'>
-            <button role='button' onClick={()=>{passwordCheck(); dataAcceptCheck()} } type='submit' className="w-1/2 justify-center drop-shadow-xl m-auto content-center text-white mt-5  py-3 bg-green-500 rounded-lg hover:bg-green-600 focus:bg-green-700">Register</button>
+            <button role='button' type='submit' className="w-1/2 justify-center drop-shadow-xl m-auto content-center text-white mt-5  py-3 bg-green-500 rounded-lg hover:bg-green-600 focus:bg-green-700">Register</button>
           </div>
         </form>
       </div>
