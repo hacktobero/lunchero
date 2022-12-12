@@ -43,13 +43,13 @@ const Login = () => {
                     <h2 className='text-black text-center text-4xl pb-14'>Log In</h2>
                     <div className='flex flex-col  text-black pb-14 py-8 xxl:py-12'>
                         <label className='relative'>
-                            <input ref={emailRef} type="text" placeholder="Input" className={`pl-4 pr-7 w-64 sm:w-60 p-2 text-black text-sm border-2  rounded-lg border-opacity-50 outline-none focus:border-green-500 placeholder-gray-300 placeholder-opacity-0 transition duration-200 ${error ? 'border-red-600' : 'focus:border-green-500'}`} />
+                            <input ref={emailRef} type="text" name='email' placeholder="Input" className={`pl-4 pr-7 w-64 sm:w-60 p-2 text-black text-sm border-2  rounded-lg border-opacity-50 outline-none focus:border-green-500 placeholder-gray-300 placeholder-opacity-0 transition duration-200 ${error ? 'border-red-600' : 'focus:border-green-500'}`} />
                             <span className='bg-white text-sm text-black text-opacity-80 absolute top-2.5 left-1 px-1 transition duration-200 input-text'>Email</span>
                         </label>
                     </div>
                     <div className='flex flex-col text-black py-6 relative'>
                         <label className='relative'>
-                            <input ref={passwordRef} role='passwordInput' type={(open === false) ? 'password' : 'text'} placeholder="Input" className={`pl-4 pr-7 w-64 sm:w-60 p-2 text-black text-sm border-2  rounded-lg border-opacity-50 outline-none focus:border-green-500 placeholder-gray-300 placeholder-opacity-0 transition duration-200 ${error ? 'border-red-600' : 'focus:border-green-500'}`} />
+                            <input ref={passwordRef} role='passwordInput' type={(open === false) ? 'password' : 'text'} name='password' placeholder="Input" className={`pl-4 pr-7 w-64 sm:w-60 p-2 text-black text-sm border-2  rounded-lg border-opacity-50 outline-none focus:border-green-500 placeholder-gray-300 placeholder-opacity-0 transition duration-200 ${error ? 'border-red-600' : 'focus:border-green-500'}`} />
                             <span className={`bg-white text-sm text-black text-opacity-80 absolute top-2.5 left-2 px-1 transition duration-200 ${(open === false) ? 'input-password' : 'input-text'}`}>Password</span>
                         </label>
                         <div className='absolute right-2 sm:right-1 sm:bottom-8 text-xl bottom-9'>
@@ -60,7 +60,7 @@ const Login = () => {
                     <h1 onClick={async() => {router.push('/register')}} className="cursor-pointer text-green-800 text-sm text-center hover:drop-shadow-md mt-4">I don't have an account yet</h1>
 
                     <div className='w-full flex flex-col items-center'>
-                        <button className='w-1/2 justify-center font-bold text-lg drop-shadow-xl m-auto content-center text-white xxl:mt-14 mt-6 py-3 bg-green-500 rounded-lg hover:bg-green-600 focus:bg-green-700'>Log in</button>
+                        <button name='submit' className='w-1/2 justify-center font-bold text-lg drop-shadow-xl m-auto content-center text-white xxl:mt-14 mt-6 py-3 bg-green-500 rounded-lg hover:bg-green-600 focus:bg-green-700'>Log in</button>
                     </div>
                 </form>
             </div>

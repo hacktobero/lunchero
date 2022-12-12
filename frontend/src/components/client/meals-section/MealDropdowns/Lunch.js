@@ -12,7 +12,7 @@ export default function Lunch({ meals }) {
             <div className={`flex justify-between items-center w-full duration-200  hover:text-green-500 ${show ? 'text-green-500' : ''}`}>
                 <h1>Lunch</h1>
                 <div>
-                    <button onClick={() => setShow(!show)} className='border rounded-full w-10 h-10 mr-3 duration-150 border-green-500 bg-green-500 text-white flex justify-center items-center font-bold hover:bg-green-600 '>
+                    <button name='Lunch' onClick={() => setShow(!show)} className='border rounded-full w-10 h-10 mr-3 duration-150 border-green-500 bg-green-500 text-white flex justify-center items-center font-bold hover:bg-green-600 '>
                         {!show ?
                             <IconContext.Provider value={{ size: '2em' }}>
                                 <MdArrowDropDown />
