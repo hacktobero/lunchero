@@ -23,12 +23,13 @@ export default function AuthContextProvider ({children}) {
           if (typeof window != "undefined") {
             const token = localStorage.getItem("luncheroToken");
     
-            if (token == "none" || token == undefined) {
+            if (token == "none" || token == undefined || token == '') {
               console.log("No token found in localStorage");
               if (
                 router.pathname == "/client" ||
                 router.pathname == "/register" ||
-                router.pathname == '/operator'
+                router.pathname == '/operator' ||
+                router.pathname == '/clientProfile'
               ) {
                 router.push("/");
               }
@@ -39,6 +40,7 @@ export default function AuthContextProvider ({children}) {
         };
         fetchUser();
       }, [token]);
+      console.log(token);
     
       return (
         <AuthContext.Provider value={[token, setToken]}>
