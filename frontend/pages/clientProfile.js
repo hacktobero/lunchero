@@ -6,7 +6,7 @@ import { getUserByToken } from "../client-api/getUserByToken";
 import { useRouter } from 'next/router';
 
 
-export default function profile() {
+export default function ClientProfile() {
     const [token] = useContext(AuthContext)
     const [email, setEmail] = useState('')
 
@@ -27,8 +27,8 @@ export default function profile() {
                 </div>
                 <h2 role='email' className='self-center justify-center lg:text-xl sm:text-md mt-5 text-center'>{email}</h2>
                 <div className='flex flex-col w-full mt-16'>
-                    <h2 className='self-center'>Preferences</h2>
-                    <select required className='justify-center self-center mt-1 rounded-lg text-center text-black border-2 border-green-500 sm:w-1/2 lg:w-1/5  outline-none p-2 shadow-xl hover:border-green-600'>
+                    <h2 role='preferences' className='self-center'>Preferences</h2>
+                    <select  role='select' required className='justify-center self-center mt-1 rounded-lg text-center text-black border-2 border-green-500 sm:w-1/2 lg:w-1/5  outline-none p-2 shadow-xl hover:border-green-600'>
                         <option value=''>{/*user Preferences*/}</option>
                         <option value='Meat'>Meat</option>
                         <option value='Vege'>Vege</option>
