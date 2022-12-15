@@ -29,5 +29,4 @@ Cypress.Commands.add('Login', (username, password) => {
   cy.get('input[name="email"]').type(username)
   cy.get('input[name="password"]').type(password)
   cy.get('button[name="submit"]').click()
-  cy.url().should('contain', '/client')
 })
