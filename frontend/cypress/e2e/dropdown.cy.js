@@ -1,6 +1,6 @@
 import Dish from "../../src/components/client/meals-section/Dish";
 
-describe('dropdowns', () => {
+ describe.skip('dropdowns', () => {
 
   it('Breakfast', () => {
     cy.Login('test@test.com', '12345678')
