@@ -1,9 +1,10 @@
 import Navbar from "../src/components/shared-components/navbar";
 import MenuBar from "../src/components/client/MenuBar";
-
+import useCart from "../src/hooks/useCart";
 
 export default function Home() {
 
+  const { cartItems } = useCart();
 
   return (
     <div className={'flex w-full h-screen items-center justify-start flex-col'}>

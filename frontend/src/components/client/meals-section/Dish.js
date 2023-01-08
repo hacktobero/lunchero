@@ -4,12 +4,13 @@ import { IoMdAdd } from "react-icons/io";
 import { IoRemove } from "react-icons/io5";
 import { MealsContext } from "../../../Context/Context";
 import { useContext } from "react";
+import useCart from '../../../hooks/useCart';
 
 export default function Dish({ name, ingredients, id }) {
 
-  const { getItemQuantity, increaseCartQuantity, decreaseCartQuantity } = useContext(MealsContext)
+  const { getItemQuantity, increaseCartQuantity, decreaseCartQuantity } = useCart();
+  const quantity = getItemQuantity(id);
 
-  const quantity = getItemQuantity(id)
 
   return (
     <div role='dish' className='w-full flex md:flex-row sm:flex-col p-3 cursor-pointer duration-200 border-green-300 rounded-md justify-between items-center shadow-lg'>
@@ -25,7 +26,7 @@ export default function Dish({ name, ingredients, id }) {
             </IconContext.Provider>
           </button>
           <p role='itemsCounter' className='w-1/3 text-green-500 text-2xl text-center'>{quantity}</p>
-          <button role='decreaseCartQuantity' onClick={() => decreaseCartQuantity(id)} className='border rounded-full w-10 h-10 duration-150 border-green-500 bg-green-500 text-white flex justify-center items-center font-bold hover:bg-green-600'>
+           <button disabled={quantity <= 0} role='decreaseCartQuantity' onClick={() => decreaseCartQuantity(id)} className='border rounded-full w-10 h-10 duration-150 border-green-500 bg-green-500 text-white flex justify-center items-center font-bold hover:bg-green-600'>
             <IconContext.Provider value={{ size: '1.3em' }}>
               <IoRemove />
             </IconContext.Provider>
