@@ -11,6 +11,7 @@ const Login = () => {
     const [open, setOpen] = useState(false)
     const [, setToken] = useContext(AuthContext);
 
+
     const emailRef = useRef()
     const passwordRef = useRef()
 
@@ -35,8 +36,10 @@ const Login = () => {
         setOpen(!open)
     }
 
+
+
     return (
-        < div className='grid grid-cols-1 text-lg  sm:grid-cols-1 h-screen w-full'>
+        <div className='grid grid-cols-1 text-lg  sm:grid-cols-1 h-screen w-full'>
 
             <div className=' flex flex-col  justify-center'>
                 <form onSubmit={submitHandler} className='xxl:w-96 xxl:h-144  md:max-w-sm font-bold sm:max-w-xs drop-shadow-2xl mx-auto bg-white border-green-500 solid border-2 sm:p-10 rounded-lg'>
@@ -57,7 +60,7 @@ const Login = () => {
                         </div>
                     </div>
 
-                    <h1 onClick={async() => {router.push('/register')}} className="cursor-pointer text-green-800 text-sm text-center hover:drop-shadow-md mt-4">I don't have an account yet</h1>
+                    <h1 onClick={async () => { router.push('/register') }} className="cursor-pointer text-green-800 text-sm text-center hover:drop-shadow-md mt-4">I don't have an account yet</h1>
 
                     <div className='w-full flex flex-col items-center'>
                         <button name='submit' className='w-1/2 justify-center font-bold text-lg drop-shadow-xl m-auto content-center text-white xxl:mt-14 mt-6 py-3 bg-green-500 rounded-lg hover:bg-green-600 focus:bg-green-700'>Log in</button>

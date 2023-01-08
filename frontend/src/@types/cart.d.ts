@@ -13,9 +13,9 @@ interface Cart {
 export type CartContextType = {
   mealsItems: Meals[] | [];
   cartItems: Cart[] | [];
-  getItemQuantity: (id: number) => {};
-  increaseCartQuantity: (id: number) => {};
-  decreaseCartQunatity: (id: number) => {};
+  getItemQuantity: (id: number) => number;
+  increaseCartQuantity: (id: number) => void;
+  decreaseCartQuantity: (id: number) => void;
 };
 
 export type ProviderType = {

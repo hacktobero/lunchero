@@ -1,14 +1,16 @@
 import '../styles/globals.css'
 import ContextProvider from "../src/Context/Context";
 import AuthContextProvider from '../src/Context/AuthContext';
-
+import CartProvider from '../src/Context/CartContext';
 
 function MyApp({ Component, pageProps }) {
   return (
     <AuthContextProvider>
-      <ContextProvider>
-        <Component {...pageProps} />
-      </ContextProvider>
+      <CartProvider>
+        <ContextProvider>
+          <Component {...pageProps} />
+        </ContextProvider>
+      </CartProvider>
     </AuthContextProvider>
   )
 }
